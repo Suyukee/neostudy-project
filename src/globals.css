@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+	--white: #fff;
+	--blue-3: #003cff;
+
+	--header-logo: #b4387a;
+	--navbar-text: #1d1929;
+
+	--footer-background: color-mix(in srgb, #b2b2b2 20%, #f4f4f4);
+}
+
+html,
+body {
+	max-width: 100vw;
+	overflow-x: hidden;
+}
+
+body {
+	font-family: 'Ubuntu', system-ui, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	color: inherit;
+	font-style: normal;
+	text-decoration-line: none;
+}
+
+button {
+	font-family: 'Ubuntu', system-ui, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 2;
+}
+
+.app {
+	min-height: 100svh;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+}
+
+/* Header */
+.header {
+	margin: 0 auto;
+	max-width: 1300px;
+	width: 100%;
+	height: 64px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.header__logo {
+	color: var(--header-logo);
+	/* font-family: 'Ubuntu'; */
+	font-size: 24px;
+	font-weight: bold;
+	letter-spacing: 2;
+}
+
+.header__navbar {
+	display: flex;
+	gap: 40px;
+
+	list-style: none;
+}
+
+.header__navbar .navbar__item {
+	/* font-family: 'Ubuntu'; */
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 2;
+	color: var(--navbar-text);
+}
+
+.header__button,
+.title__button {
+	padding: 16px;
+
+	background: var(--blue-3);
+	color: var(--white);
+	border-radius: 16px;
+	border: none;
+}
+
+/* Main */
+.main {
+	margin: 0 auto;
+	max-width: 1300px;
+	width: 100%;
+	margin-top: 132px;
+}
+
+/* Card section */
+.card-section {
+	display: flex;
+	justify-content: space-between;
+	gap: 150px;
+}
+
+.card-list {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 16px;
+	list-style: none;
+}
+
+.card-section__title {
+	display: flex;
+	flex-direction: column;
+	gap: 36px;
+}
+
+.title__text {
+	color: #1c1c1e;
+	font-size: 48px;
+	font-weight: bold;
+	line-height: 50px;
+}
+
+/* Footer */
+.footer-wrapper {
+	height: 462px;
+	background: var(--footer-background);
+}
+
+.footer {
+	margin: 94px auto;
+	max-width: 1300px;
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+}
+
+.footer__address {
+	display: flex;
+	justify-content: space-between;
+}
+
+.address__text {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.address__tel {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.address__mail {
+	color: #2d3748;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.footer__navbar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 32px;
+}
+
+.footer__navbar .navbar__item {
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 2;
+}
+
+.footer__hr {
+	height: 2px;
+	background-color: white;
+	border: none;
+}
+
+.footer__description {
+	color: #2d3748;
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 2;
+}
