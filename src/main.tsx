@@ -2,7 +2,7 @@ import { StrictMode, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router';
 import RootLayout from '@/layouts/root-layout';
-import Main from '@/components/main/Main';
+import MainPage from '@/pages/main-page/';
 import '@/globals.css';
 
 createRoot(document.getElementById('root')!).render(
@@ -11,7 +11,7 @@ createRoot(document.getElementById('root')!).render(
 			<Suspense fallback={<p>Loading...</p>}>
 				<Routes>
 					<Route path="/" element={<RootLayout />}>
-						<Route index element={<Main />} />
+						<Route index element={<MainPage />} />
 					</Route>
 				</Routes>
 			</Suspense>

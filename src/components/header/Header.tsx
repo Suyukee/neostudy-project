@@ -3,7 +3,9 @@ import { Link } from 'react-router';
 export default function Header() {
 	return (
 		<header className="header">
-			<div className="header__logo">NeoBank</div>
+			<Link to="/" className="header__logo">
+				NeoBank
+			</Link>
 			<nav className="header__navbar">
 				<Link to="/" className="navbar__item">
 					Credit card
