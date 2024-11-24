@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 
 export default function Footer() {
 	return (
-		<footer className="footer-wrapper">
+		<footer className="footer-section">
 			<div className="footer">
 				<div className="footer__address">
 					<img src="/images/logo.png" height="50" alt="Neoflex" />
