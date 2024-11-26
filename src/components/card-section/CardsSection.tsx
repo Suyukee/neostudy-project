@@ -1,4 +1,4 @@
-import '@/components/card-section/card-section.scss';
+import '@/components/card-section/cards-section.scss';
 
 export default function CardsSection() {
 	return (

@@ -1,4 +1,4 @@
-@import '@/assets/variables.scss';
+@use '@/assets/variables.scss' as *;
 
 .footer-section {
 	padding: 94px 0;
