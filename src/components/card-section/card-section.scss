@@ -1,0 +1,50 @@
+@import '@/assets/variables.scss';
+
+.card-section {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.card-section__title {
+	max-width: 610px;
+	display: flex;
+	flex-direction: column;
+	gap: 36px;
+}
+
+.title__text {
+	color: #1c1c1e;
+	font-size: 48px;
+	font-weight: bold;
+	line-height: 50px;
+}
+
+.card-list {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 16px;
+	list-style: none;
+
+	img {
+		border-radius: 15px;
+	}
+}
+
+@media (max-width: 920px) {
+	.title__text {
+		font-size: 30px;
+		line-height: 32px;
+	}
+	.card-section {
+		padding-top: 50px;
+	}
+	.card-list {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 5px;
+	}
+	.card-list img {
+		width: 180px;
+	}
+}

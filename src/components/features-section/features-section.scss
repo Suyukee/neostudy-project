@@ -1,0 +1,64 @@
+@import '@/assets/variables.scss';
+
+.features-section {
+	display: flex;
+	align-items: center;
+	gap: 75px;
+}
+
+.features {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.features__title {
+	font-family: 'Rubik', system-ui, sans-serif;
+	font-size: 35px;
+	font-weight: 500;
+	line-height: 50px;
+	color: #0b132a;
+}
+
+.features__description {
+	font-family: inherit;
+	color: $features-color;
+}
+
+.features__list {
+	padding-top: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	list-style: none;
+
+	li {
+		height: 30px;
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		color: $features-color;
+		font-family: inherit;
+	}
+}
+
+@media (max-width: 920px) {
+	.workman-svg {
+		width: 400px;
+	}
+	.features-section {
+		padding-top: 10px;
+		gap: 30px;
+	}
+	.features {
+		gap: 12px;
+	}
+	.features__title {
+		font-size: 28px;
+		font-weight: 500;
+		line-height: 25px;
+	}
+	.features__list {
+		gap: 5px;
+	}
+}

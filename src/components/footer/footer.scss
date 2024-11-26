@@ -1,0 +1,77 @@
+@import '@/assets/variables.scss';
+
+.footer-section {
+	padding: 94px 0;
+	background: color-mix(in srgb, #b2b2b2 20%, #f4f4f4);
+}
+
+.footer {
+	margin: 0 auto;
+	max-width: 1300px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+}
+
+.footer__address {
+	display: flex;
+	justify-content: space-between;
+}
+
+.address__text {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.address__tel {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.address__mail {
+	color: #2d3748;
+	font-weight: 500;
+}
+
+.footer__navbar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 32px;
+
+	.navbar__item {
+		font-weight: 500;
+		letter-spacing: 2;
+	}
+}
+
+.footer__hr {
+	height: 2px;
+	background-color: white;
+	border: none;
+}
+
+.footer__description {
+	color: #2d3748;
+	font-weight: 500;
+	letter-spacing: 2;
+}
+
+@media (max-width: 1300px) {
+	.footer {
+		padding: 0 20px;
+	}
+}
+
+@media (max-width: 920px) {
+	.footer-section {
+		padding: 60px 0;
+	}
+	.footer {
+		padding: 0 10px;
+	}
+	.footer__navbar {
+		gap: 12px;
+	}
+}

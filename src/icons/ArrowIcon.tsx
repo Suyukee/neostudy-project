@@ -1,0 +1,21 @@
+interface Props {
+	direction?: 'left' | 'right';
+	disabled?: boolean;
+}
+
+export default function ArrowIcon({ direction = 'right', disabled = false }: Props) {
+	return (
+		<svg
+			width="25"
+			height="26"
+			viewBox="0 0 25 26"
+			fill="none"
+			transform={direction === 'left' ? 'rotate(180)' : ''}
+		>
+			<path
+				d="M0 9H15.1579V1.60858C15.1579 1.41552 15.4044 1.33452 15.5189 1.48994L24 13L15.5189 24.5101C15.4044 24.6655 15.1579 24.5845 15.1579 24.3914V17H0"
+				stroke={disabled ? '#222' : 'white'}
+			/>
+		</svg>
+	);
+}

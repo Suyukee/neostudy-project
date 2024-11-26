@@ -1,0 +1,50 @@
+@import '@/assets/variables.scss';
+
+.header {
+	margin: 0 auto;
+	max-width: 1300px;
+	width: 100%;
+	height: 64px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.header__logo {
+	color: #b4387a;
+	font-size: 24px;
+	font-weight: bold;
+	letter-spacing: 2;
+}
+
+.header__navbar {
+	display: flex;
+	gap: 46px;
+	list-style: none;
+
+	.navbar__item {
+		font-weight: bold;
+		letter-spacing: 2;
+		color: $navbar-text;
+		transition: color ease 0.1s;
+	}
+
+	.navbar__item:hover {
+		color: #b2a35f;
+	}
+}
+
+@media (max-width: 1300px) {
+	.header {
+		padding: 0 20px;
+	}
+}
+
+@media (max-width: 920px) {
+	.header {
+		padding: 0 10px;
+	}
+	.header__navbar {
+		display: none;
+	}
+}
