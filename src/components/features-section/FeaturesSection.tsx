@@ -5,7 +5,9 @@ import '@/components/features-section/features-section.scss';
 export default function FeaturesSection() {
 	return (
 		<article className="features-section">
-			<WorkManIcon />
+			<div className="workman">
+				<WorkManIcon />
+			</div>
 			<section className="features">
 				<h2 className="features__title">We Provide Many Features You Can Use</h2>
 

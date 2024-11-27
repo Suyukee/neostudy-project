@@ -1,6 +1,5 @@
 .main {
 	margin: 132px auto 98px;
-	margin-top: 132px;
 	max-width: 1300px;
 	width: 100%;
 }
@@ -20,6 +19,11 @@
 
 @media (max-width: 920px) {
 	.main {
+		margin: 40px auto 40px;
 		padding: 0 10px;
+	}
+	.main__info {
+		margin-top: 40px;
+		gap: 30px;
 	}
 }

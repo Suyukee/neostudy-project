@@ -6,7 +6,7 @@ export default function CardsSection() {
 			<section className="card-section__title">
 				<h1 className="title__text">Choose the design you like and apply for card right now</h1>
 				<div>
-					<button className="title__button">Choose the card</button>
+					<button className="button-primary">Choose the card</button>
 				</div>
 			</section>
 

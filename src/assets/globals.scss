@@ -8,7 +8,7 @@ body {
 }
 
 body {
-	background: #f5f4ff;
+	background: $background;
 	font-family: 'Ubuntu', system-ui, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -40,9 +40,8 @@ button {
 	grid-template-rows: auto 1fr auto;
 }
 
-// Blue Button
-.header__button,
-.title__button {
+// Primary button
+.button-primary {
 	padding: 16px;
 	background: $button;
 	color: white;
@@ -51,12 +50,10 @@ button {
 	transition: background ease 0.1s;
 }
 
-.header__button:hover,
-.title__button:hover {
+.button-primary:hover {
 	background: $button-hover;
 }
 
-.header__button:disabled,
-.title__button:disabled {
+.button-primary:disabled {
 	background: $button-hover;
 }

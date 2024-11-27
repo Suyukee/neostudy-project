@@ -6,6 +6,11 @@
 	gap: 75px;
 }
 
+.workman svg {
+	width: 100%;
+	height: auto;
+}
+
 .features {
 	display: flex;
 	flex-direction: column;
@@ -43,12 +48,11 @@
 }
 
 @media (max-width: 920px) {
-	.workman-svg {
-		width: 400px;
-	}
 	.features-section {
-		padding-top: 10px;
 		gap: 30px;
+	}
+	.workman svg {
+		max-width: 350px;
 	}
 	.features {
 		gap: 12px;
@@ -60,5 +64,17 @@
 	}
 	.features__list {
 		gap: 5px;
+	}
+}
+
+@media (max-width: 500px) {
+	.features-section {
+		gap: 15px;
+	}
+	.workman svg {
+		max-width: 250px;
+	}
+	.features-section {
+		flex-direction: column-reverse;
 	}
 }

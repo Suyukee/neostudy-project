@@ -1,4 +1,5 @@
 import CardsSection from '@/components/card-section';
+import ContactsSection from '@/components/contacts-section';
 import CurrencySection from '@/components/currency-section';
 import FeaturesSection from '@/components/features-section';
 import WorldMapSection from '@/components/world-map-section';
@@ -12,6 +13,7 @@ export default function MainPage() {
 				<FeaturesSection />
 				<CurrencySection />
 				<WorldMapSection />
+				<ContactsSection />
 			</div>
 		</main>
 	);

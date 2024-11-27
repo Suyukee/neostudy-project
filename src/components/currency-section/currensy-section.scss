@@ -12,7 +12,7 @@
 	align-items: center;
 
 	h2 {
-		color: #1c1c1e;
+		color: $text-primary;
 		font-size: 30px;
 	}
 
@@ -63,4 +63,38 @@
 	color: white;
 	border: none;
 	font-size: 20px;
+}
+
+@media (max-width: 920px) {
+	.currency__header {
+		flex-direction: column;
+
+		h2 {
+			font-size: 25px;
+		}
+	}
+
+	.currency__span {
+		font-size: 16px;
+	}
+
+	.currency__info {
+		svg {
+			display: none;
+		}
+	}
+
+	.currency__button {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 500px) {
+	.info__currency-list {
+		gap: 5px 20px;
+	}
+	.currency-list__item {
+		font-size: 16px;
+		gap: 10px;
+	}
 }

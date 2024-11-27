@@ -1,7 +1,6 @@
 export default function WorkManIcon() {
 	return (
 		<svg
-			className="workman-svg"
 			width="510"
 			height="415"
 			viewBox="0 0 510 415"

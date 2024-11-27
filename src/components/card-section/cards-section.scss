@@ -14,7 +14,7 @@
 }
 
 .title__text {
-	color: #1c1c1e;
+	color: $text-primary;
 	font-size: 48px;
 	font-weight: bold;
 	line-height: 50px;
@@ -32,19 +32,23 @@
 }
 
 @media (max-width: 920px) {
+	.card-section {
+		padding-top: 10px;
+		flex-direction: column;
+	}
+	.card-section__title {
+		gap: 16px;
+	}
 	.title__text {
 		font-size: 30px;
 		line-height: 32px;
 	}
-	.card-section {
-		padding-top: 50px;
-	}
 	.card-list {
 		display: grid;
-		grid-template-columns: auto;
+		grid-template-columns: repeat(4, 1fr);
 		gap: 5px;
 	}
 	.card-list img {
-		width: 180px;
+		width: 100%;
 	}
 }
