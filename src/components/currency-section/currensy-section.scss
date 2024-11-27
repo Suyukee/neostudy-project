@@ -69,8 +69,17 @@
 	.currency__header {
 		flex-direction: column;
 
+		h2,
+		span {
+			text-align: center;
+		}
+
 		h2 {
 			font-size: 25px;
+		}
+
+		span {
+			margin-top: 10px;
 		}
 	}
 
@@ -90,9 +99,17 @@
 }
 
 @media (max-width: 500px) {
-	.info__currency-list {
-		gap: 5px 20px;
+	.currency {
+		padding: 20px;
 	}
+	.currency__span {
+		margin-top: 10px;
+	}
+
+	.info__currency-list {
+		gap: 5px 15px;
+	}
+
 	.currency-list__item {
 		font-size: 16px;
 		gap: 10px;

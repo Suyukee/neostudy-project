@@ -6,7 +6,7 @@ export default function Footer() {
 		<footer className="footer-section">
 			<div className="footer">
 				<div className="footer__address">
-					<img src="/images/logo.png" height="50" alt="Neoflex" />
+					<img src="/images/logo.png" alt="Neoflex" />
 					<address className="address__text">
 						<a className="address__tel" href="tel:+74959842513">
 							+7 (495) 984 25 13

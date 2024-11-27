@@ -17,6 +17,10 @@
 .footer__address {
 	display: flex;
 	justify-content: space-between;
+
+	img {
+		height: 50px;
+	}
 }
 
 .address__text {
@@ -61,6 +65,17 @@
 @media (max-width: 1300px) {
 	.footer {
 		padding: 0 20px;
+	}
+
+	.footer__address {
+		img {
+			height: 40px;
+		}
+	}
+
+	.address__tel {
+		font-size: 20px;
+		font-weight: bold;
 	}
 }
 

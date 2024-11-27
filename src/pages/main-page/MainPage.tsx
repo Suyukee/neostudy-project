@@ -13,7 +13,7 @@ export default function MainPage() {
 				<FeaturesSection />
 				<CurrencySection />
 				<WorldMapSection />
-				<ContactsSection />
+				{/* <ContactsSection /> */}
 			</div>
 		</main>
 	);

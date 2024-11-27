@@ -47,8 +47,10 @@
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 5px;
-	}
-	.card-list img {
-		width: 100%;
+
+		img {
+			width: 100%;
+			border-radius: 4px;
+		}
 	}
 }
