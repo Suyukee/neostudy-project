@@ -14,8 +14,8 @@ export default function CurrencySection() {
 	return (
 		<article className="currency">
 			<div className="currency__header">
-				<h2>Exchange rate in internet bank</h2>
-				<span>Update every 15 minutes, MSC 09.08.2022</span>
+				<h2 className="header__title">Exchange rate in internet bank</h2>
+				<span className="header__data">Update every 15 minutes, MSC 09.08.2022</span>
 			</div>
 
 			<p className="currency__span">Currency</p>
@@ -25,7 +25,7 @@ export default function CurrencySection() {
 					{currency.map((item, index) => (
 						<li key={index} className="currency-list__item">
 							{`${item.currencyName}:`}
-							<span>{item.value}</span>
+							<span className="item__span">{item.value}</span>
 						</li>
 					))}
 				</ul>

@@ -1,8 +1,8 @@
+import { useState } from 'react';
 import { Link } from 'react-router';
 import BurgerMenuIcon from '@/icons/BurgerMenuIcon';
-import '@/components/header/header.scss';
-import { useState } from 'react';
 import CrossMenuIcon from '@/icons/CrossMenuIcon';
+import '@/components/header/header.scss';
 
 export default function Header() {
 	const [isActive, setIsActive] = useState(false);
