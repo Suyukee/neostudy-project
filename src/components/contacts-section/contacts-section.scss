@@ -67,7 +67,15 @@
 	border-radius: 20px;
 }
 
-@media (max-width: 9200px) {
+@media (max-width: 920px) {
+	.contacts-section {
+		gap: 30px;
+	}
+
+	.contacts {
+		gap: 20px;
+	}
+
 	.contacts__support {
 		font-size: 20px;
 	}
