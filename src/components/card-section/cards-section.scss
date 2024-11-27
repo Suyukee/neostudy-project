@@ -4,12 +4,11 @@
 .card-section {
 	display: flex;
 	justify-content: space-between;
-	gap: 20px;
 
 	@include media('max', 'tablet') {
-		padding-top: 10px;
 		flex-direction: column;
 		align-items: center;
+		gap: 10px;
 	}
 }
 

@@ -20,7 +20,7 @@ export default function ContactsSection() {
 
 			<form className="form-email">
 				<MailIcon />
-				<input className="form-email__input" type="email" placeholder="Your email" />
+				<input className="form-email__input" type="email" placeholder="Your email" required />
 				<button className="form-email__button" type="submit">
 					<MainButtonIcon />
 					Subscribe

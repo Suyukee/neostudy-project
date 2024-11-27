@@ -8,8 +8,11 @@ export default function Header() {
 	const [isActive, setIsActive] = useState(false);
 
 	const handleOpenMenu = () => {
-		setIsActive(!isActive);
-		console.log(isActive);
+		setIsActive(true);
+	};
+
+	const handleCloseMenu = () => {
+		setIsActive(false);
 	};
 
 	return (
@@ -38,7 +41,7 @@ export default function Header() {
 			<button className={`button burger-menu ${isActive && 'active'}`} onClick={handleOpenMenu}>
 				<BurgerMenuIcon />
 			</button>
-			<button className={`button cross-menu ${isActive && 'active'}`} onClick={handleOpenMenu}>
+			<button className={`button cross-menu ${isActive && 'active'}`} onClick={handleCloseMenu}>
 				<CrossMenuIcon />
 			</button>
 		</header>
