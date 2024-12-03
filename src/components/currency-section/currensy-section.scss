@@ -1,0 +1,113 @@
+@use '@/assets/variables.scss' as *;
+@use '@/assets/mixins.scss' as *;
+
+.currency {
+	padding: 32px;
+	background: linear-gradient(transparent 30%, #b2b2b2 90%), #f4f4f4;
+	border-radius: 28px;
+
+	@include media('max', 'mobile') {
+		padding: 20px;
+	}
+}
+
+.currency__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	@include media('max', 'tablet') {
+		flex-direction: column;
+	}
+}
+
+.header__title {
+	color: $text-primary;
+	font-size: 30px;
+	font-weight: 500;
+
+	@include media('max', 'tablet') {
+		text-align: center;
+		font-size: 25px;
+	}
+}
+
+.header__data {
+	font-weight: 500;
+
+	@include media('max', 'tablet') {
+		margin-top: 10px;
+		text-align: center;
+	}
+}
+
+.currency__span {
+	margin-top: 40px;
+	font-size: 20px;
+	font-weight: 500;
+
+	@include media('max', 'tablet') {
+		font-size: 16px;
+	}
+
+	@include media('max', 'mobile') {
+		margin-top: 20px;
+	}
+}
+
+.currency__info {
+	margin-top: 26px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	svg {
+		@include media('max', 'tablet') {
+			display: none;
+		}
+	}
+}
+
+.info__currency-list {
+	height: 76px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 32px;
+	list-style: none;
+
+	@include media('max', 'mobile') {
+		gap: 5px 15px;
+	}
+}
+
+.currency-list__item {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: 2;
+	color: #808080;
+
+	@include media('max', 'mobile') {
+		gap: 5px;
+		font-size: 16px;
+	}
+}
+
+.item__span {
+	color: #000;
+}
+
+.currency__button {
+	margin-top: 32px;
+	background: transparent;
+	color: white;
+	border: none;
+	font-size: 20px;
+
+	@include media('max', 'tablet') {
+		font-size: 16px;
+		gap: 10px;
+	}
+}

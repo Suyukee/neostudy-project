@@ -1,0 +1,60 @@
+@use '@/assets/variables.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+html,
+body {
+	max-width: 100vw;
+	overflow-x: hidden;
+}
+
+body {
+	background: $background;
+	font-family: 'Ubuntu', system-ui, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	color: inherit;
+	font-style: normal;
+	text-decoration-line: none;
+}
+
+button {
+	font-family: 'Ubuntu', system-ui, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 2;
+	cursor: pointer;
+}
+
+// App
+.app {
+	min-height: 100svh;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+}
+
+// Primary button
+.button-primary {
+	padding: 16px;
+	background: $button;
+	color: white;
+	border-radius: 16px;
+	border: none;
+	transition: background ease 0.1s;
+}
+
+.button-primary:hover {
+	background: $button-hover;
+}
+
+.button-primary:disabled {
+	background: $button-hover;
+}

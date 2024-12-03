@@ -1,0 +1,95 @@
+@use '@/assets/variables.scss' as *;
+@use '@/assets/mixins.scss' as *;
+
+.footer-section {
+	padding: 94px 0;
+	background: color-mix(in srgb, #b2b2b2 20%, #f4f4f4);
+
+	@include media('max', 'tablet') {
+		padding: 60px 0;
+	}
+}
+
+.footer {
+	margin: 0 auto;
+	max-width: 1300px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+
+	@include media('max', 'laptop') {
+		padding: 0 20px;
+	}
+
+	@include media('max', 'tablet') {
+		padding: 0 10px;
+	}
+}
+
+.footer__address {
+	display: flex;
+	justify-content: space-between;
+
+	@include media('max', 'laptop') {
+		gap: 5px;
+	}
+
+	img {
+		height: 50px;
+
+		@include media('max', 'laptop') {
+			height: 40px;
+		}
+	}
+
+	// Address
+	.address__text {
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+	}
+
+	.address__tel {
+		font-size: 30px;
+		font-weight: bold;
+
+		@include media('max', 'tablet') {
+			font-size: 20px;
+			font-weight: bold;
+		}
+	}
+
+	.address__mail {
+		color: #2d3748;
+		font-weight: 500;
+	}
+
+	// Navbar item
+	.navbar__item {
+		font-weight: 500;
+		letter-spacing: 2;
+	}
+}
+
+.footer__navbar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px 40px;
+
+	@include media('max', 'tablet') {
+		gap: 12px;
+	}
+}
+
+.footer__hr {
+	height: 2px;
+	background-color: white;
+	border: none;
+}
+
+.footer__description {
+	color: #2d3748;
+	font-weight: 500;
+	letter-spacing: 2;
+}

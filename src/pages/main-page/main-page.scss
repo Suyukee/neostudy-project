@@ -1,0 +1,29 @@
+.main {
+	margin: 132px auto 98px;
+	max-width: 1300px;
+	width: 100%;
+}
+
+.main__info {
+	margin-top: 112px;
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+}
+
+@media (max-width: 1300px) {
+	.main {
+		padding: 0 20px;
+	}
+}
+
+@media (max-width: 920px) {
+	.main {
+		margin: 30px auto 30px;
+		padding: 0 10px;
+	}
+	.main__info {
+		margin-top: 40px;
+		gap: 30px;
+	}
+}

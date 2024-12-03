@@ -1,0 +1,61 @@
+@use '@/assets/variables.scss' as *;
+@use '@/assets/mixins.scss' as *;
+
+.card-section {
+	display: flex;
+	justify-content: space-between;
+
+	@include media('max', 'tablet') {
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+	}
+}
+
+.card-section__title {
+	max-width: 610px;
+	display: flex;
+	flex-direction: column;
+	gap: 36px;
+
+	@include media('max', 'tablet') {
+		gap: 16px;
+	}
+}
+
+.title__text {
+	color: $text-primary;
+	font-size: 48px;
+	font-weight: bold;
+	line-height: 50px;
+
+	@include media('max', 'tablet') {
+		font-size: 30px;
+		line-height: 32px;
+	}
+}
+
+.card-list {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 16px;
+	list-style: none;
+
+	@include media('max', 'tablet') {
+		width: auto;
+		display: grid;
+	}
+
+	@include media('max', 'mobile') {
+		gap: 5px;
+	}
+
+	img {
+		border-radius: 15px;
+
+		@include media('max', 'tablet') {
+			width: 100%;
+			border-radius: 4px;
+		}
+	}
+}

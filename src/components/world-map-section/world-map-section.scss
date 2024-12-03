@@ -1,0 +1,42 @@
+@use '@/assets/variables.scss' as *;
+@use '@/assets/mixins.scss' as *;
+
+.worldmap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 32px;
+	color: $text-primary;
+
+	@include media('max', 'tablet') {
+		gap: 12px;
+	}
+
+	svg {
+		margin-top: 24px;
+		width: 100%;
+		height: auto;
+
+		@include media('max', 'tablet') {
+			margin-top: 12px;
+		}
+	}
+}
+
+.worldmap__title {
+	font-size: 30px;
+	font-weight: 500;
+
+	@include media('max', 'tablet') {
+		font-size: 25px;
+		text-align: center;
+	}
+}
+
+.worldmap__description {
+	font-weight: 500;
+
+	@include media('max', 'tablet') {
+		text-align: center;
+	}
+}

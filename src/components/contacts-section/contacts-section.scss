@@ -1,0 +1,101 @@
+@use '@/assets/variables.scss' as *;
+@use '@/assets/mixins.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+.contacts-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 62px;
+
+	@include media('max', 'tablet') {
+		gap: 30px;
+	}
+}
+
+.contacts {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
+
+	@include media('max', 'tablet') {
+		gap: 20px;
+	}
+}
+
+.contacts__support {
+	color: #eb801d;
+	font-size: 24px;
+	font-weight: bold;
+	letter-spacing: 2;
+
+	@include media('max', 'tablet') {
+		font-size: 18px;
+	}
+}
+
+.contacts__subscribe {
+	color: $text-primary;
+	font-size: 30px;
+	font-weight: bold;
+	letter-spacing: 2;
+
+	@include media('max', 'tablet') {
+		font-size: 20px;
+	}
+}
+
+.contacts__news {
+	color: $text-primary;
+	font-size: 30px;
+	font-weight: medium;
+	letter-spacing: 2;
+
+	@include media('max', 'tablet') {
+		font-size: 20px;
+	}
+}
+
+.form-email {
+	padding: 22px 32px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	background: white;
+	border-radius: 20px;
+
+	@include media('max', 'tablet') {
+		padding: 15px 20px;
+	}
+}
+
+.form-email__input {
+	width: 100%;
+	border: none;
+	font-family: 'Nunito Sans';
+	font-size: 20px;
+
+	@include media('max', 'tablet') {
+		font-size: 16px;
+	}
+}
+
+.form-email__input:focus {
+	outline: none;
+}
+
+.form-email__button {
+	padding: 12px 28px;
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	background: #686df1;
+	color: white;
+	border: none;
+	border-radius: 20px;
+
+	@include media('max', 'tablet') {
+		padding: 12px 20px;
+	}
+}

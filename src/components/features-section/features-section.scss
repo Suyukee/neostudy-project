@@ -1,0 +1,82 @@
+@use '@/assets/variables.scss' as *;
+@use '@/assets/mixins.scss' as *;
+
+.features-section {
+	display: flex;
+	align-items: center;
+	gap: 75px;
+
+	@include media('max', 'tablet') {
+		gap: 30px;
+	}
+
+	@include media('max', 'mobile') {
+		flex-direction: column-reverse;
+		gap: 15px;
+	}
+}
+
+.workman {
+	svg {
+		width: 100%;
+		height: auto;
+
+		@include media('max', 'tablet') {
+			max-width: 350px;
+		}
+
+		@include media('max', 'mobile') {
+			max-width: 250px;
+		}
+	}
+}
+
+.features {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	@include media('max', 'tablet') {
+		gap: 12px;
+	}
+}
+
+.features__title {
+	font-family: 'Rubik', system-ui, sans-serif;
+	font-size: 35px;
+	font-weight: 500;
+	line-height: 50px;
+	color: #0b132a;
+
+	@include media('max', 'tablet') {
+		font-size: 28px;
+		font-weight: 500;
+		line-height: 25px;
+	}
+}
+
+.features__description {
+	font-family: inherit;
+	color: $features-color;
+}
+
+.features__list {
+	padding-top: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	list-style: none;
+
+	@include media('max', 'tablet') {
+		gap: 5px;
+	}
+}
+
+.list__item {
+	height: 30px;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	color: $features-color;
+	font-family: inherit;
+}
