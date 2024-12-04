@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react';
 import BankIcon from '@/icons/BankIcon';
 import { getCurrency } from '@/services/currency/currency';
-import {
-	CurrencyDataState,
-	StringDataState,
-} from '@/components/currency-section/CurrencySectionTypes';
+import { CurrencyDataState } from '@/components/currency-section/currency-section-types';
+import { StringDataState } from '@/types/api';
 import '@/components/currency-section/currensy-section.scss';
 
 export default function CurrencySection() {
