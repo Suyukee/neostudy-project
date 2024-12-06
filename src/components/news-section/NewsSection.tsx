@@ -20,7 +20,7 @@ export default function NewsSection() {
 		if (!sliderRef.current) return;
 
 		const slider = sliderRef.current;
-		const slideWidth = 500;
+		const slideWidth = slider.clientWidth > 500 ? 500 : slider.clientWidth / 2;
 
 		if (direction === 'left') {
 			slider.scrollLeft = scrollValue - slideWidth;

@@ -3,18 +3,11 @@
 
 .news-section {
 	padding: 5px;
+	max-width: 96vw;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 32px;
-
-	@include media('max', 'tablet') {
-		max-width: 920px;
-	}
-
-	@include media('max', 'mobile') {
-		max-width: 500px;
-	}
 }
 
 .news-section__title {
@@ -103,6 +96,10 @@
 	display: flex;
 	justify-content: end;
 	gap: 20px;
+
+	@include media('max', 'mobile') {
+		justify-content: center;
+	}
 }
 
 .navbar__button {
