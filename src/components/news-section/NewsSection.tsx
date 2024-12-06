@@ -1,11 +1,37 @@
 import { useEffect, useRef, useState } from 'react';
 import { getNews } from '@/services/news/news';
-import { NewsDataState } from '@/components/news-section/news-section.types';
+import { NewsDataState } from '@/components/news-section/news-section-types';
+import ImageFallback from '@/components/image-fallback';
 import ArrowIcon from '@/icons/ArrowIcon';
 import '@/components/news-section/news-section.scss';
 
 export default function NewsSection() {
 	const sliderRef = useRef<HTMLUListElement>(null);
+
+	const [scrollValue, setScrollValue] = useState(0);
+	const [maxScroll, setMaxScroll] = useState(0);
+
+	useEffect(() => {
+		if (!sliderRef.current) return;
+		setMaxScroll(sliderRef.current.scrollWidth - sliderRef.current.clientWidth);
+	}, [sliderRef.current]);
+
+	const handleSlideScroll = (direction: 'left' | 'right') => {
+		if (!sliderRef.current) return;
+
+		const slider = sliderRef.current;
+		const slideWidth = 500;
+
+		if (direction === 'left') {
+			slider.scrollLeft = scrollValue - slideWidth;
+			setScrollValue(scrollValue - slideWidth);
+		}
+
+		if (direction === 'right') {
+			slider.scrollLeft = scrollValue + slideWidth;
+			setScrollValue(scrollValue + slideWidth);
+		}
+	};
 
 	const [news, setNews] = useState<NewsDataState>(null);
 
@@ -15,30 +41,11 @@ export default function NewsSection() {
 
 			if (status === 'ok') {
 				setNews(news);
-				console.log(news);
 			}
 		};
 
 		getState();
 	}, []);
-
-	const handleClickLeft = () => {
-		if (!sliderRef.current) return;
-
-		const slider = sliderRef.current;
-		const slideWidth = slider.clientWidth;
-
-		slider.scrollLeft = slider.scrollLeft - slideWidth;
-	};
-
-	const handleClickRight = () => {
-		if (!sliderRef.current) return;
-
-		const slider = sliderRef.current;
-		const slideWidth = slider.clientWidth;
-
-		slider.scrollLeft = slider.scrollLeft + slideWidth;
-	};
 
 	return (
 		<article className="news-section">
@@ -49,21 +56,31 @@ export default function NewsSection() {
 			</p>
 
 			<section className="slider">
-				<ul className="slider__list" ref={sliderRef}>
+				<ul className="slider__slider-list" ref={sliderRef}>
 					{news?.map((item, index) => (
-						<li className="list__item" key={index}>
-							<img src={item.urlToImage} alt="News image" />
-							<h4>{item.title}</h4>
-							<p>{item.description || '—'}</p>
+						<li className="slider-list__item" key={index}>
+							<a href={item.url} target="_blank">
+								<ImageFallback src={item.urlToImage} fallback="/images/news.png" alt="News image" />
+								<h4>{item.title}</h4>
+								<p>{item.description}</p>
+							</a>
 						</li>
 					))}
 				</ul>
 
 				<nav className="slider__navbar">
-					<button className="navbar__button" onClick={handleClickLeft}>
+					<button
+						className="navbar__button"
+						disabled={scrollValue < 1}
+						onClick={() => handleSlideScroll('left')}
+					>
 						<ArrowIcon direction="left" />
 					</button>
-					<button className="navbar__button" onClick={handleClickRight}>
+					<button
+						className="navbar__button"
+						disabled={scrollValue >= maxScroll}
+						onClick={() => handleSlideScroll('right')}
+					>
 						<ArrowIcon />
 					</button>
 				</nav>

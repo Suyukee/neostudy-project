@@ -1,9 +1,4 @@
 import { DataState } from '@/types/api';
-
-export interface News {
-	title: string;
-	description: string;
-	urlToImage: string;
-}
+import { News } from '@/services/news/news-types';
 
 export type NewsDataState = DataState<News[]>;

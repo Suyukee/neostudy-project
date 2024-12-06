@@ -11,10 +11,19 @@ export default function CurrencySection() {
 
 	useEffect(() => {
 		const getState = async () => {
-			const { currency, timeUpdate } = await getCurrency('USD', 'EUR', 'CNY', 'JPY', 'CHF', 'TRY');
+			const { currency, timeUpdate, result } = await getCurrency(
+				'USD',
+				'EUR',
+				'CNY',
+				'JPY',
+				'CHF',
+				'TRY',
+			);
 
-			setCurrency(currency);
-			setTimeUpdate(timeUpdate);
+			if (result === 'success') {
+				setCurrency(currency);
+				setTimeUpdate(timeUpdate);
+			}
 		};
 
 		getState();
