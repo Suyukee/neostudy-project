@@ -2,12 +2,14 @@
 @use '@/assets/mixins.scss' as *;
 
 .news-section {
-	padding: 5px;
-	max-width: 96vw;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 32px;
+
+	@include media('max', 'laptop') {
+		max-width: 96vw;
+	}
 }
 
 .news-section__title {
@@ -70,13 +72,18 @@
 			font-weight: 500;
 			overflow: hidden;
 			text-overflow: ellipsis;
+
+			@include media('max', 'tablet') {
+				padding: 0;
+			}
 		}
+
 		h4 {
-			flex-grow: 1;
 			font-size: 20px;
 
 			@include media('max', 'tablet') {
-				font-size: 18px;
+				font-size: 16px;
+				font-weight: bold;
 			}
 		}
 

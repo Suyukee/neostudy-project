@@ -7,6 +7,7 @@ import '@/components/news-section/news-section.scss';
 
 export default function NewsSection() {
 	const sliderRef = useRef<HTMLUListElement>(null);
+	const itemRef = useRef<HTMLUListElement>(null);
 
 	const [scrollValue, setScrollValue] = useState(0);
 	const [maxScroll, setMaxScroll] = useState(0);
@@ -20,7 +21,8 @@ export default function NewsSection() {
 		if (!sliderRef.current) return;
 
 		const slider = sliderRef.current;
-		const slideWidth = slider.clientWidth > 500 ? 500 : slider.clientWidth / 2;
+		const itemWidth = slider.querySelectorAll('li')[0].clientWidth;
+		const slideWidth = slider.clientWidth > 1000 ? 500 : itemWidth + 10;
 
 		if (direction === 'left') {
 			slider.scrollLeft = scrollValue - slideWidth;
