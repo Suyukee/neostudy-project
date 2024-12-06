@@ -7,7 +7,6 @@ import '@/components/news-section/news-section.scss';
 
 export default function NewsSection() {
 	const sliderRef = useRef<HTMLUListElement>(null);
-	const itemRef = useRef<HTMLUListElement>(null);
 
 	const [scrollValue, setScrollValue] = useState(0);
 	const [maxScroll, setMaxScroll] = useState(0);
