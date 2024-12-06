@@ -55,36 +55,44 @@ export default function NewsSection() {
 				interested in.
 			</p>
 
-			<section className="slider">
-				<ul className="slider__slider-list" ref={sliderRef}>
-					{news?.map((item, index) => (
-						<li className="slider-list__item" key={index}>
-							<a href={item.url} target="_blank">
-								<ImageFallback src={item.urlToImage} fallback="/images/news.png" alt="News image" />
-								<h4>{item.title}</h4>
-								<p>{item.description}</p>
-							</a>
-						</li>
-					))}
-				</ul>
+			{!news && <h2>Error to request news</h2>}
 
-				<nav className="slider__navbar">
-					<button
-						className="navbar__button"
-						disabled={scrollValue < 1}
-						onClick={() => handleSlideScroll('left')}
-					>
-						<ArrowIcon direction="left" />
-					</button>
-					<button
-						className="navbar__button"
-						disabled={scrollValue >= maxScroll}
-						onClick={() => handleSlideScroll('right')}
-					>
-						<ArrowIcon />
-					</button>
-				</nav>
-			</section>
+			{news && (
+				<section className="slider">
+					<ul className="slider__slider-list" ref={sliderRef}>
+						{news?.map((item, index) => (
+							<li className="slider-list__item" key={index}>
+								<a href={item.url} target="_blank">
+									<ImageFallback
+										src={item.urlToImage}
+										fallback="/images/news.png"
+										alt="News image"
+									/>
+									<h4>{item.title}</h4>
+									<p>{item.description}</p>
+								</a>
+							</li>
+						))}
+					</ul>
+
+					<nav className="slider__navbar">
+						<button
+							className="navbar__button"
+							disabled={scrollValue < 1}
+							onClick={() => handleSlideScroll('left')}
+						>
+							<ArrowIcon direction="left" />
+						</button>
+						<button
+							className="navbar__button"
+							disabled={scrollValue >= maxScroll}
+							onClick={() => handleSlideScroll('right')}
+						>
+							<ArrowIcon />
+						</button>
+					</nav>
+				</section>
+			)}
 		</article>
 	);
 }
