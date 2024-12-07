@@ -39,8 +39,6 @@ export default function CurrencySection() {
 			<p className="currency__span">Currency</p>
 
 			<div className="currency__info">
-				{!currency && <h2>Error to request news</h2>}
-
 				{currency && (
 					<ul className="info__currency-list">
 						{currency.map((item, index) => (

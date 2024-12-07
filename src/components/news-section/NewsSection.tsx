@@ -56,8 +56,6 @@ export default function NewsSection() {
 				interested in.
 			</p>
 
-			{!news && <h2>Error to request news</h2>}
-
 			{news && (
 				<section className="slider">
 					<ul className="slider__slider-list" ref={sliderRef}>
@@ -84,6 +82,7 @@ export default function NewsSection() {
 						>
 							<ArrowIcon direction="left" />
 						</button>
+
 						<button
 							className="navbar__button"
 							disabled={scrollValue >= maxScroll}
