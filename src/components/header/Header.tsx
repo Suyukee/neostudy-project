@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import BurgerMenuIcon from '@/icons/BurgerMenuIcon';
 import CrossMenuIcon from '@/icons/CrossMenuIcon';
 import '@/components/header/header.scss';
@@ -22,18 +22,30 @@ export default function Header() {
 			</Link>
 
 			<nav className={`header__navbar ${isActive && 'active'}`}>
-				<Link to="/" className="navbar__item">
+				<NavLink
+					to="/loan"
+					className={({ isActive }) => (isActive ? ' navbar__item_active' : 'navbar__item')}
+				>
 					Credit card
-				</Link>
-				<Link to="/" className="navbar__item">
+				</NavLink>
+				<NavLink
+					to="/product"
+					className={({ isActive }) => (isActive ? ' navbar__item_active' : 'navbar__item')}
+				>
 					Product
-				</Link>
-				<Link to="/" className="navbar__item">
+				</NavLink>
+				<NavLink
+					to="/account"
+					className={({ isActive }) => (isActive ? ' navbar__item_active' : 'navbar__item')}
+				>
 					Account
-				</Link>
-				<Link to="/" className="navbar__item">
+				</NavLink>
+				<NavLink
+					to="/resources"
+					className={({ isActive }) => (isActive ? ' navbar__item_active' : 'navbar__item')}
+				>
 					Resources
-				</Link>
+				</NavLink>
 			</nav>
 
 			<button className={`button button-primary ${isActive && 'active'}`}>Online Bank</button>

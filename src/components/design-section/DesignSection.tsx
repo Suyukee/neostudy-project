@@ -1,9 +1,9 @@
-import '@/components/card-section/cards-section.scss';
+import '@/components/design-section/design-section.scss';
 
-export default function CardsSection() {
+export default function DesignSection() {
 	return (
-		<article className="card-section">
-			<section className="card-section__title">
+		<article className="design-section">
+			<section className="design-section__title">
 				<h1 className="title__text">Choose the design you like and apply for card right now</h1>
 				<div>
 					<button className="button-primary">Choose the card</button>

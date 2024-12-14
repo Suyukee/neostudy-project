@@ -1,4 +1,4 @@
-import CardsSection from '@/components/card-section';
+import CardsDesign from '@/components/design-section';
 import FeaturesSection from '@/components/features-section';
 import CurrencySection from '@/components/currency-section';
 import WorldMapSection from '@/components/world-map-section';
@@ -9,7 +9,7 @@ import '@/pages/main-page/main-page.scss';
 export default function MainPage() {
 	return (
 		<main className="main">
-			<CardsSection />
+			<CardsDesign />
 			<div className="main__info">
 				<FeaturesSection />
 				<CurrencySection />

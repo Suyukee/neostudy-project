@@ -1,7 +1,7 @@
 @use '@/assets/variables.scss' as *;
 @use '@/assets/mixins.scss' as *;
 
-.card-section {
+.design-section {
 	display: flex;
 	justify-content: space-between;
 
@@ -12,7 +12,7 @@
 	}
 }
 
-.card-section__title {
+.design-section__title {
 	max-width: 610px;
 	display: flex;
 	flex-direction: column;

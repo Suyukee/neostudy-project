@@ -1,3 +1,3 @@
-import CardsSection from './CardsSection';
+import CardSection from './CardSection';
 
-export default CardsSection;
+export default CardSection;
