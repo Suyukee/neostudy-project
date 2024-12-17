@@ -1,0 +1,28 @@
+.tabs__tabs-list {
+	display: flex;
+	align-items: center;
+	gap: 32px;
+}
+
+.tabs-list__tab {
+	margin-top: 40px;
+	padding: 12px 15px;
+	position: relative;
+	top: 2px;
+	background: transparent;
+	border: none;
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 2%;
+	cursor: pointer;
+}
+
+.tabs-list__tab.active-tab {
+	padding: 12px 15px 10px;
+	border-bottom: 2px solid;
+}
+
+.tabs__tab-panel {
+	margin-top: 50px;
+	width: 100%;
+}

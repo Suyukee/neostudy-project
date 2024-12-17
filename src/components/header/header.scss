@@ -67,7 +67,7 @@
 	}
 }
 
-.button-primary {
+.header__button.button-primary {
 	@include media('max', 'tablet') {
 		position: absolute;
 		bottom: 30px;
@@ -85,7 +85,7 @@
 	height: 25px;
 }
 
-.button-primary.active {
+.header__button.button-primary.active {
 	@include media('max', 'tablet') {
 		display: flex;
 	}

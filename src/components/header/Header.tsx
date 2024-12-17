@@ -48,12 +48,20 @@ export default function Header() {
 				</NavLink>
 			</nav>
 
-			<button className={`button button-primary ${isActive && 'active'}`}>Online Bank</button>
+			<button className={`header__button button-primary ${isActive && 'active'}`}>
+				Online Bank
+			</button>
 
-			<button className={`button burger-menu ${isActive && 'active'}`} onClick={handleOpenMenu}>
+			<button
+				className={`header__button burger-menu ${isActive && 'active'}`}
+				onClick={handleOpenMenu}
+			>
 				<BurgerMenuIcon />
 			</button>
-			<button className={`button cross-menu ${isActive && 'active'}`} onClick={handleCloseMenu}>
+			<button
+				className={`header__button cross-menu ${isActive && 'active'}`}
+				onClick={handleCloseMenu}
+			>
 				<CrossMenuIcon />
 			</button>
 		</header>
