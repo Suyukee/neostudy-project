@@ -66,11 +66,19 @@
 	flex-direction: column;
 	gap: 8px;
 
+	@include media('max', 'tablet') {
+		gap: 4px;
+	}
+
 	h4 {
 		color: $list-text;
 		font-size: 20px;
 		font-weight: bold;
 		letter-spacing: 2%;
+
+		@include media('max', 'mobile') {
+			font-size: 16px;
+		}
 	}
 
 	p {
@@ -96,11 +104,11 @@
 
 	img {
 		width: 380px;
-		border-radius: 13px;
+		border-radius: 20px;
 
 		@include media('max', 'tablet') {
 			width: 250px;
-			border-radius: 10px;
+			border-radius: 14px;
 		}
 	}
 }

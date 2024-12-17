@@ -1,5 +1,11 @@
+@use '@/assets/mixins.scss' as *;
+
 .card-tabs__tabs-list {
 	border-bottom: 2px solid rgb(128, 128, 128, 0.2);
+
+	@include media('max', 'tablet') {
+		gap: 0;
+	}
 }
 
 .tabs-list__tab {
