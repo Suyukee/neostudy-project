@@ -1,12 +1,13 @@
 .tabs__tabs-list {
+	height: 100%;
 	display: flex;
 	align-items: center;
 	gap: 32px;
 }
 
 .tabs-list__tab {
-	margin-top: 40px;
-	padding: 12px 15px;
+	padding: 0 15px;
+	height: 100%;
 	position: relative;
 	top: 2px;
 	background: transparent;

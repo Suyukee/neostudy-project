@@ -2,7 +2,7 @@
 @use '@/assets/mixins.scss' as *;
 
 .card-section {
-	padding: 48px 32px;
+	padding: 42px 32px;
 	display: grid;
 	grid-template-columns: auto 1fr;
 	grid-template-rows: repeat(4, auto);
