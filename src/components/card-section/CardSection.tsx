@@ -1,4 +1,5 @@
 import '@/components/card-section/card-section.scss';
+import Tooltip from '../tooltip';
 
 export default function CardSection() {
 	return (
@@ -15,18 +16,26 @@ export default function CardSection() {
 			</div>
 
 			<ul className="card-section__card-list">
-				<li className="card-list__item">
-					<h4>Up to 160 days</h4>
-					<p>No percent</p>
-				</li>
-				<li className="card-list__item">
-					<h4>Up to 600 000 ₽</h4>
-					<p>Credit limit</p>
-				</li>
-				<li className="card-list__item">
-					<h4>0 ₽</h4>
-					<p>Card service is free</p>
-				</li>
+				<Tooltip tooltip="When repaying the full debt up to 160 days.">
+					<li className="card-list__item">
+						<h4>Up to 160 days</h4>
+						<p>No percent</p>
+					</li>
+				</Tooltip>
+
+				<Tooltip tooltip="Over the limit willaccrue percent.">
+					<li className="card-list__item">
+						<h4>Up to 600 000 ₽</h4>
+						<p>Credit limit</p>
+					</li>
+				</Tooltip>
+
+				<Tooltip tooltip="Promotion valid until December 31, 2022.">
+					<li className="card-list__item">
+						<h4>0 ₽</h4>
+						<p>Card service is free</p>
+					</li>
+				</Tooltip>
 			</ul>
 
 			<div className="card-section__button">

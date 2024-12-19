@@ -1,0 +1,34 @@
+@use '@/assets/variables.scss' as *;
+
+.tooltip {
+	position: relative;
+}
+
+.tooltip__children {
+	position: relative;
+}
+
+.tooltip__text {
+	padding: 7px;
+	width: 170px;
+	position: absolute;
+	top: 120%;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	align-items: center;
+	background: $grey;
+	opacity: 0;
+	transition: ease 0.3s;
+
+	span {
+		color: white;
+		font-size: 12px;
+		font-weight: 500;
+		letter-spacing: 2%;
+	}
+}
+
+.tooltip:hover .tooltip__text {
+	opacity: 1;
+}
