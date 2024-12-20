@@ -1,3 +1,4 @@
+@use '@/assets/variables.scss' as *;
 @use '@/assets/mixins.scss' as *;
 
 .about-card-section {
@@ -87,7 +88,7 @@
 }
 
 .about-card-list__item.primary {
-	background: #eaecee;
+	background: $card-block-bg;
 }
 
 .about-card-list__item.secondary {

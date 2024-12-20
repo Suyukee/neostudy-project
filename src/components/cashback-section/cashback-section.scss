@@ -1,0 +1,64 @@
+@use '@/assets/variables.scss' as *;
+@use '@/assets/mixins.scss' as *;
+
+.cashback-section {
+	margin-top: 32px;
+
+	@include media('max', 'mobile') {
+		margin-top: 20px;
+	}
+}
+
+.cashback-section__cashback-list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	gap: 40px;
+	list-style: none;
+
+	@include media('max', 'tablet') {
+		gap: 10px;
+	}
+
+	@include media('max', 'mobile') {
+		grid-template-columns: repeat(1, 1fr);
+		grid-template-rows: repeat(6, 1fr);
+	}
+}
+
+.cashback-list__item {
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 8px;
+	border-radius: 28px;
+	box-shadow: 0 0 8px rgb(0, 0, 0, 0.08), 0 2px 4px rgb(0, 0, 0, 0.2);
+
+	@include media('max', 'tablet') {
+		padding: 12px 16px;
+		border-radius: 14px;
+	}
+
+	h3 {
+		font-size: 36px;
+		font-weight: bold;
+
+		@include media('max', 'tablet') {
+			font-size: 20px;
+		}
+	}
+
+	p {
+		color: rgb(67, 67, 67, 0.9);
+		font-weight: 500;
+	}
+}
+
+.cashback-list__item.primary {
+	background: $card-block-bg;
+}
+
+.cashback-list__item.secondary {
+	background: rgb(136, 179, 184, 0.6);
+}

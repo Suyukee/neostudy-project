@@ -1,5 +1,5 @@
 import '@/components/card-section/card-section.scss';
-import Tooltip from '../tooltip';
+import Tooltip from '@/components/tooltip';
 
 export default function CardSection() {
 	return (

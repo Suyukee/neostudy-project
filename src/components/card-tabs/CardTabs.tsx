@@ -1,5 +1,7 @@
 import { Tabs, Tab, TabList, TabPanel } from '@/components/tabs/Tabs';
 import AboutCardSection from '@/components/about-card-section';
+import ConditionsSection from '@/components/conditions-section';
+import CashbackSection from '@/components/cashback-section';
 import '@/components/card-tabs/card-tabs.scss';
 
 export default function CardTabs() {
@@ -25,10 +27,10 @@ export default function CardTabs() {
 					<AboutCardSection />
 				</TabPanel>
 				<TabPanel classnames="card-tabs__tab-panel" index={1}>
-					Rates and conditions
+					<ConditionsSection />
 				</TabPanel>
 				<TabPanel classnames="card-tabs__tab-panel" index={2}>
-					Cashback
+					<CashbackSection />
 				</TabPanel>
 				<TabPanel classnames="card-tabs__tab-panel" index={3}>
 					FAQ
