@@ -25,24 +25,28 @@ export default function Header() {
 				<NavLink
 					to="/loan"
 					className={({ isActive }) => (isActive ? ' navbar__item_active' : 'navbar__item')}
+					onClick={handleCloseMenu}
 				>
 					Credit card
 				</NavLink>
 				<NavLink
 					to="/product"
 					className={({ isActive }) => (isActive ? ' navbar__item_active' : 'navbar__item')}
+					onClick={handleCloseMenu}
 				>
 					Product
 				</NavLink>
 				<NavLink
 					to="/account"
 					className={({ isActive }) => (isActive ? ' navbar__item_active' : 'navbar__item')}
+					onClick={handleCloseMenu}
 				>
 					Account
 				</NavLink>
 				<NavLink
 					to="/resources"
 					className={({ isActive }) => (isActive ? ' navbar__item_active' : 'navbar__item')}
+					onClick={handleCloseMenu}
 				>
 					Resources
 				</NavLink>
