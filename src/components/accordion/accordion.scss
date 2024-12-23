@@ -12,8 +12,13 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	gap: 10px;
 	cursor: pointer;
 	user-select: none;
+
+	svg {
+		min-width: 24px;
+	}
 }
 
 .accordion__accordion-details {
