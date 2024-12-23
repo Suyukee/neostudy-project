@@ -7,7 +7,7 @@ export default function AccordionArrowIcon({ isOpen = false }: { isOpen?: boolea
 			fill="none"
 			transform={isOpen ? 'rotate(180)' : ''}
 		>
-			<path d="M6 9L12 15L18 9" stroke="#33363F" stroke-width="2" />
+			<path d="M6 9L12 15L18 9" stroke="#33363F" strokeWidth="2" />
 		</svg>
 	);
 }
