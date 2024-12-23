@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { Accordion, AccordionDetails, AccordionSummary } from '@/components/accordion/Accordion';
 import '@/components/faq-section/faq-section.scss';
+import { StringStateWithNull } from '@/types/api';
 
 const issuingCardData = [
 	{
@@ -51,13 +53,37 @@ const usingCardData = [
 ];
 
 export default function FaqSection() {
+	const [receivingExpanded, setReceivingExpanded] = useState<StringStateWithNull>(null);
+	const [usingExpanded, setUsingExpanded] = useState<StringStateWithNull>(null);
+
+	const handleReceivingClick = (panel: string) => () => {
+		if (receivingExpanded === panel) {
+			setReceivingExpanded(null);
+		} else {
+			setReceivingExpanded(panel);
+		}
+	};
+
+	const handleUsingClick = (panel: string) => () => {
+		if (usingExpanded === panel) {
+			setUsingExpanded(null);
+		} else {
+			setUsingExpanded(panel);
+		}
+	};
+
 	return (
 		<>
 			<section className="faq-section">
 				<h2 className="faq-section__title">Issuing and receiving a card</h2>
 				<div className="faq-section__accordion">
 					{issuingCardData.map((item, index) => (
-						<Accordion classnames="accordion__accordion-item" key={index}>
+						<Accordion
+							classnames="accordion__accordion-item"
+							key={index}
+							expanded={receivingExpanded === `receivingCard${index}`}
+							onClick={handleReceivingClick(`receivingCard${index}`)}
+						>
 							<AccordionSummary classnames="accordion-item__summary">{item.title}</AccordionSummary>
 							<AccordionDetails classnames="accordion-item__details">
 								{item.description}
@@ -71,7 +97,12 @@ export default function FaqSection() {
 				<h2 className="faq-section__title">Using a credit card</h2>
 				<div className="faq-section__accordion">
 					{usingCardData.map((item, index) => (
-						<Accordion classnames="accordion__accordion-item" key={index}>
+						<Accordion
+							classnames="accordion__accordion-item"
+							key={index}
+							expanded={usingExpanded === `usingCard${index}`}
+							onClick={handleUsingClick(`usingCard${index}`)}
+						>
 							<AccordionSummary classnames="accordion-item__summary">{item.title}</AccordionSummary>
 							<AccordionDetails classnames="accordion-item__details">
 								{item.description}

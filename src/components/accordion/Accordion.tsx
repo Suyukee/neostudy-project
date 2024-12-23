@@ -8,21 +8,25 @@ import {
 } from '@/components/accordion/accordion-types';
 import '@/components/accordion/accordion.scss';
 
-export function Accordion({ classnames, children }: AccordionProps) {
+export function Accordion({ expanded, onClick, classnames, children }: AccordionProps) {
 	return (
-		<AccordionProvider>
+		<AccordionProvider expanded={expanded} onClick={onClick}>
 			<div className={`accordion ${classnames}`}>{children}</div>
 		</AccordionProvider>
 	);
 }
 
 export function AccordionSummary({ classnames, children }: AccordionSummaryProps) {
-	const { expanded, setExpanded }: UseContextAccordionType = useContext(AccordionContext);
+	const { expanded, setExpanded, onClick }: UseContextAccordionType = useContext(AccordionContext);
 
 	if (!setExpanded) return;
 
 	const handleClick = () => {
-		setExpanded(!expanded);
+		if (onClick) {
+			onClick();
+		} else {
+			setExpanded(!expanded);
+		}
 	};
 
 	return (

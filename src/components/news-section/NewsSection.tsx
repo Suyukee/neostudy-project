@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { getNews } from '@/services/news/news';
-import { NewsDataState } from '@/components/news-section/news-section-types';
+import { NewsStateWithNull } from '@/components/news-section/news-section-types';
 import ImageFallback from '@/components/image-fallback';
 import ArrowIcon from '@/icons/ArrowIcon';
 import '@/components/news-section/news-section.scss';
@@ -34,7 +34,7 @@ export default function NewsSection() {
 		}
 	};
 
-	const [news, setNews] = useState<NewsDataState>(null);
+	const [news, setNews] = useState<NewsStateWithNull>(null);
 
 	useEffect(() => {
 		const getState = async () => {

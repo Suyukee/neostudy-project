@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import BankIcon from '@/icons/BankIcon';
 import { getCurrency } from '@/services/currency/currency';
-import { CurrencyDataState } from '@/components/currency-section/currency-section-types';
-import { StringDataState } from '@/types/api';
+import { CurrencyStateWithNull } from '@/components/currency-section/currency-section-types';
+import { StringStateWithNull } from '@/types/api';
 import '@/components/currency-section/currensy-section.scss';
 
 export default function CurrencySection() {
-	const [currency, setCurrency] = useState<CurrencyDataState>(null);
-	const [timeUpdate, setTimeUpdate] = useState<StringDataState>(null);
+	const [currency, setCurrency] = useState<CurrencyStateWithNull>(null);
+	const [timeUpdate, setTimeUpdate] = useState<StringStateWithNull>(null);
 
 	useEffect(() => {
 		const getState = async () => {

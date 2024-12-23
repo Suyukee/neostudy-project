@@ -1,3 +1,3 @@
-export type DataState<T> = T | null;
+export type StateWithNull<T> = T | null;
 
-export type StringDataState = DataState<string>;
+export type StringStateWithNull = StateWithNull<string>;
