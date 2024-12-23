@@ -27,7 +27,7 @@ export interface TabPanelProps {
 	children: ReactNode;
 }
 
-export interface UseTabsType {
+export interface UseContextTabsType {
 	activeTab?: number;
 	setActiveTab?: Dispatch<SetStateAction<number>>;
 }

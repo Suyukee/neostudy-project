@@ -1,0 +1,31 @@
+@use '@/assets/variables.scss' as *;
+
+.faq-section {
+	margin-top: 32px;
+}
+
+.faq-section__title {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.faq-section__accordion {
+	margin-top: 32px;
+}
+
+.accordion__accordion-item,
+.accordion__accordion-item:last-child {
+	border-color: #e2e8f0;
+}
+
+.accordion-item__summary {
+	color: $text-primary;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 147.4%;
+}
+
+.accordion-item__details {
+	color: $olive-color-text;
+	line-height: 147.4%;
+}

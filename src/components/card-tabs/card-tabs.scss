@@ -1,3 +1,4 @@
+@use '@/assets/variables.scss' as *;
 @use '@/assets/mixins.scss' as *;
 
 .card-tabs {
@@ -18,5 +19,5 @@
 }
 
 .tabs-list__tab {
-	color: #7b7454;
+	color: $olive-color-text;
 }

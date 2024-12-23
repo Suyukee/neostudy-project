@@ -1,0 +1,26 @@
+.accordion {
+	border: 1px solid;
+	border-bottom: none;
+}
+
+.accordion:last-child {
+	border-bottom: 1px solid;
+}
+
+.accordion__accordion-summary {
+	padding: 28px 32px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+	user-select: none;
+}
+
+.accordion__accordion-details {
+	padding: 24px 32px;
+	display: none;
+}
+
+.accordion__accordion-details.expanded {
+	display: block;
+}

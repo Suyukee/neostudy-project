@@ -2,6 +2,7 @@ import { Tabs, Tab, TabList, TabPanel } from '@/components/tabs/Tabs';
 import AboutCardSection from '@/components/about-card-section';
 import ConditionsSection from '@/components/conditions-section';
 import CashbackSection from '@/components/cashback-section';
+import FaqSection from '@/components/faq-section';
 import '@/components/card-tabs/card-tabs.scss';
 
 export default function CardTabs() {
@@ -33,7 +34,7 @@ export default function CardTabs() {
 					<CashbackSection />
 				</TabPanel>
 				<TabPanel classnames="card-tabs__tab-panel" index={3}>
-					FAQ
+					<FaqSection />
 				</TabPanel>
 			</Tabs>
 		</article>
