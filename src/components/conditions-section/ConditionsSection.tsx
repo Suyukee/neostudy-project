@@ -24,12 +24,10 @@ export default function ConditionsSection() {
 		<section className="conditions-section">
 			<ul className="conditions-section__conditions-list">
 				{data.map((condition, index) => (
-					<li className="conditions-list__item">
-						<div className="item__condition" key={index}>
+					<li className="conditions-list__item" key={index}>
+						<div className="item__condition">
 							<h6 className="condition__title">{condition.title}</h6>
-							<p className="condition__description" key={index}>
-								{condition.description}
-							</p>
+							<p className="condition__description">{condition.description}</p>
 						</div>
 						{index !== data.length - 1 && <Divider />}
 					</li>

@@ -3,7 +3,7 @@ import { AccordionProviderProps } from '@/components/accordion/accordion-types';
 
 export const AccordionContext = createContext({});
 
-export const AccordionProvider = ({ children }: AccordionProviderProps) => {
+export default function AccordionProvider({ children }: AccordionProviderProps) {
 	const [expanded, setExpanded] = useState(false);
 
 	return (
@@ -11,4 +11,4 @@ export const AccordionProvider = ({ children }: AccordionProviderProps) => {
 			{children}
 		</AccordionContext.Provider>
 	);
-};
+}

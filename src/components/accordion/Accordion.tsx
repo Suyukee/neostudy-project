@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { AccordionProvider, AccordionContext } from '@/components/accordion/AccordionContext';
+import AccordionProvider, { AccordionContext } from '@/components/accordion/AccordionContext';
 import AccordionArrowIcon from '@/icons/AccordionArrowIcon';
 import {
 	AccordionProps,
