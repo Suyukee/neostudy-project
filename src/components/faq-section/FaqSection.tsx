@@ -53,22 +53,13 @@ const usingCardData = [
 ];
 
 export default function FaqSection() {
-	const [receivingExpanded, setReceivingExpanded] = useState<StringStateWithNull>(null);
-	const [usingExpanded, setUsingExpanded] = useState<StringStateWithNull>(null);
+	const [expanded, setExpanded] = useState<StringStateWithNull>(null);
 
-	const handleReceivingClick = (panel: string) => () => {
-		if (receivingExpanded === panel) {
-			setReceivingExpanded(null);
+	const handleClick = (panel: string) => () => {
+		if (expanded === panel) {
+			setExpanded(null);
 		} else {
-			setReceivingExpanded(panel);
-		}
-	};
-
-	const handleUsingClick = (panel: string) => () => {
-		if (usingExpanded === panel) {
-			setUsingExpanded(null);
-		} else {
-			setUsingExpanded(panel);
+			setExpanded(panel);
 		}
 	};
 
@@ -81,8 +72,8 @@ export default function FaqSection() {
 						<Accordion
 							classnames="accordion__accordion-item"
 							key={index}
-							expanded={receivingExpanded === `receivingCard${index}`}
-							onClick={handleReceivingClick(`receivingCard${index}`)}
+							expanded={expanded === `receivingCard${index}`}
+							onClick={handleClick(`receivingCard${index}`)}
 						>
 							<AccordionSummary classnames="accordion-item__summary">{item.title}</AccordionSummary>
 							<AccordionDetails classnames="accordion-item__details">
@@ -100,8 +91,8 @@ export default function FaqSection() {
 						<Accordion
 							classnames="accordion__accordion-item"
 							key={index}
-							expanded={usingExpanded === `usingCard${index}`}
-							onClick={handleUsingClick(`usingCard${index}`)}
+							expanded={expanded === `usingCard${index}`}
+							onClick={handleClick(`usingCard${index}`)}
 						>
 							<AccordionSummary classnames="accordion-item__summary">{item.title}</AccordionSummary>
 							<AccordionDetails classnames="accordion-item__details">
