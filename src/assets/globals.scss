@@ -34,6 +34,23 @@ button {
 	cursor: pointer;
 }
 
+// Inputs
+
+input {
+	font-family: 'Ubuntu', system-ui, sans-serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+input[type='number'] {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: textfield;
+}
+
 // App
 .app {
 	min-height: 100svh;

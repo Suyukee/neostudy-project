@@ -1,0 +1,123 @@
+@use '@/assets/variables.scss' as *;
+@use '@/assets/mixins.scss' as *;
+
+.prescoring-section {
+	margin-top: 42px;
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	background: white;
+	border-radius: 28px;
+	box-shadow: $box-shadow;
+}
+
+.prescoring-section__customize-card {
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+	gap: 40px;
+
+	@include media('max', 'mobile') {
+		grid-template-columns: 1fr;
+	}
+}
+
+.amount__title {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	h2 {
+		font-size: 30px;
+		font-weight: bold;
+	}
+
+	p {
+		font-weight: 500;
+	}
+
+	@include media('max', 'tablet') {
+		h2 {
+			font-size: 20px;
+		}
+	}
+}
+
+.amount__select {
+	margin-top: 32px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.customize-card__hr {
+	width: 1px;
+	height: 100%;
+	border: none;
+	border-left: 1px dashed #808080;
+
+	@include media('max', 'mobile') {
+		display: none;
+	}
+}
+
+.customize-card__text-value {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	p {
+		margin-top: 6px;
+	}
+}
+
+.text-value__divider {
+	max-width: 220px;
+}
+
+.prescoring-section__contact-info {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.contact-info__title {
+	margin-top: 32px;
+	font-size: 20px;
+	font-weight: bold;
+
+	@include media('max', 'tablet') {
+		font-size: 18px;
+	}
+}
+
+.contact-info__form {
+	margin-top: 10px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 16px;
+
+	@include media('max', 'tablet') {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include media('max', 'mobile') {
+		grid-template-columns: 1fr;
+	}
+}
+
+.form__item {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.contact-info__button {
+	display: flex;
+	justify-content: flex-end;
+
+	button {
+		width: 148px;
+		border-radius: 8px;
+	}
+}

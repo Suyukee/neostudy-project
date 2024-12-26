@@ -9,12 +9,12 @@ export interface AccordionProviderProps {
 export interface AccordionProps {
 	expanded?: boolean;
 	onClick?: () => void;
-	classnames?: string;
+	classes?: string;
 	children: ReactNode;
 }
 
 export interface AccordionSummaryProps {
-	classnames?: string;
+	classes?: string;
 	children: ReactNode;
 }
 

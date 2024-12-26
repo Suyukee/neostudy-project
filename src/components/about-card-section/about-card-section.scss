@@ -45,7 +45,7 @@
 	flex-direction: column;
 	gap: 16px;
 	border-radius: 28px;
-	box-shadow: 0 0 8px rgb(0, 0, 0, 0.08), 0 2px 4px rgb(0, 0, 0, 0.2);
+	box-shadow: $box-shadow;
 
 	@include media('max', 'tablet') {
 		padding: 12px 16px;

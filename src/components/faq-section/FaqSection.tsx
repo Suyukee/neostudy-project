@@ -70,13 +70,13 @@ export default function FaqSection() {
 				<div className="faq-section__accordion">
 					{issuingCardData.map((item, index) => (
 						<Accordion
-							classnames="accordion__accordion-item"
+							classes="accordion__accordion-item"
 							key={index}
 							expanded={expanded === `receivingCard${index}`}
 							onClick={handleClick(`receivingCard${index}`)}
 						>
-							<AccordionSummary classnames="accordion-item__summary">{item.title}</AccordionSummary>
-							<AccordionDetails classnames="accordion-item__details">
+							<AccordionSummary classes="accordion-item__summary">{item.title}</AccordionSummary>
+							<AccordionDetails classes="accordion-item__details">
 								{item.description}
 							</AccordionDetails>
 						</Accordion>
@@ -89,13 +89,13 @@ export default function FaqSection() {
 				<div className="faq-section__accordion">
 					{usingCardData.map((item, index) => (
 						<Accordion
-							classnames="accordion__accordion-item"
+							classes="accordion__accordion-item"
 							key={index}
 							expanded={expanded === `usingCard${index}`}
 							onClick={handleClick(`usingCard${index}`)}
 						>
-							<AccordionSummary classnames="accordion-item__summary">{item.title}</AccordionSummary>
-							<AccordionDetails classnames="accordion-item__details">
+							<AccordionSummary classes="accordion-item__summary">{item.title}</AccordionSummary>
+							<AccordionDetails classes="accordion-item__details">
 								{item.description}
 							</AccordionDetails>
 						</Accordion>

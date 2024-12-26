@@ -13,18 +13,18 @@ export function Tabs({ defaultIndex = 0, children }: TabsProps) {
 	return <TabsProvider defaultIndex={defaultIndex}>{children}</TabsProvider>;
 }
 
-export function TabList({ classnames, children }: TabListProps) {
-	return <div className={`tabs__tabs-list ${classnames}`}>{children}</div>;
+export function TabList({ classes, children }: TabListProps) {
+	return <div className={`tabs__tabs-list ${classes}`}>{children}</div>;
 }
 
-export function Tab({ index, classnames, children }: TabProps) {
+export function Tab({ index, classes, children }: TabProps) {
 	const { activeTab, setActiveTab }: UseContextTabsType = useContext(TabsContext);
 
 	if (!setActiveTab) return;
 
 	return (
 		<button
-			className={`tabs-list__tab ${classnames} ${activeTab === index && 'active-tab'}`}
+			className={`tabs-list__tab ${classes} ${activeTab === index && 'active-tab'}`}
 			onClick={() => setActiveTab(index)}
 		>
 			{children}
@@ -32,10 +32,10 @@ export function Tab({ index, classnames, children }: TabProps) {
 	);
 }
 
-export function TabPanel({ index, classnames, children }: TabPanelProps) {
+export function TabPanel({ index, classes, children }: TabPanelProps) {
 	const { activeTab }: UseContextTabsType = useContext(TabsContext);
 
 	return activeTab === index ? (
-		<div className={`tabs__tab-panel ${classnames}`}>{children}</div>
+		<div className={`tabs__tab-panel ${classes}`}>{children}</div>
 	) : null;
 }

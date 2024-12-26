@@ -8,15 +8,15 @@ import {
 } from '@/components/accordion/accordion-types';
 import '@/components/accordion/accordion.scss';
 
-export function Accordion({ expanded, onClick, classnames, children }: AccordionProps) {
+export function Accordion({ expanded, onClick, classes, children }: AccordionProps) {
 	return (
 		<AccordionProvider expanded={expanded} onClick={onClick}>
-			<div className={`accordion ${classnames}`}>{children}</div>
+			<div className={`accordion ${classes}`}>{children}</div>
 		</AccordionProvider>
 	);
 }
 
-export function AccordionSummary({ classnames, children }: AccordionSummaryProps) {
+export function AccordionSummary({ classes, children }: AccordionSummaryProps) {
 	const { expanded, setExpanded, onClick }: UseContextAccordionType = useContext(AccordionContext);
 
 	if (!setExpanded) return;
@@ -31,7 +31,7 @@ export function AccordionSummary({ classnames, children }: AccordionSummaryProps
 
 	return (
 		<div
-			className={`accordion__accordion-summary ${expanded && 'expanded'} ${classnames}`}
+			className={`accordion__accordion-summary ${expanded && 'expanded'} ${classes}`}
 			onClick={handleClick}
 		>
 			{children} <AccordionArrowIcon isOpen={expanded} />
@@ -39,11 +39,11 @@ export function AccordionSummary({ classnames, children }: AccordionSummaryProps
 	);
 }
 
-export function AccordionDetails({ classnames, children }: AccordionSummaryProps) {
+export function AccordionDetails({ classes, children }: AccordionSummaryProps) {
 	const { expanded }: UseContextAccordionType = useContext(AccordionContext);
 
 	return (
-		<div className={`accordion__accordion-details ${expanded && 'expanded'} ${classnames}`}>
+		<div className={`accordion__accordion-details ${expanded && 'expanded'} ${classes}`}>
 			{children}
 		</div>
 	);

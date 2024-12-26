@@ -11,19 +11,19 @@ export interface TabsProps {
 }
 
 export interface TabListProps {
-	classnames?: string;
+	classes?: string;
 	children: ReactNode;
 }
 
 export interface TabProps {
 	index: number;
-	classnames?: string;
+	classes?: string;
 	children: ReactNode;
 }
 
 export interface TabPanelProps {
 	index: number;
-	classnames?: string;
+	classes?: string;
 	children: ReactNode;
 }
 
