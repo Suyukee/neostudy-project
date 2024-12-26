@@ -135,7 +135,6 @@ export default function PrescoringSection() {
 								name="birthdate"
 								type="date"
 								id="birthdate"
-								placeholder="Select Date and Time"
 								helperText="Incorrect date of birth"
 								rules={{
 									...FormRuler.requiredInput,
