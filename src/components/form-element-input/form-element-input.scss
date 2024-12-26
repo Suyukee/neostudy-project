@@ -31,14 +31,14 @@
 	font-weight: 500;
 }
 
-.form-element-input__error-icon {
+.form-element-input__icon {
 	position: absolute;
 	right: 18px;
 	top: 12px;
 }
 
-input[type='date']::-webkit-inner-spin-button,
-input[type='date']::-webkit-calendar-picker-indicator {
-	display: none;
-	-webkit-appearance: none;
+input[type='date'] ~ .form-element-input__icon {
+	position: absolute;
+	right: 45px;
+	top: 12px;
 }

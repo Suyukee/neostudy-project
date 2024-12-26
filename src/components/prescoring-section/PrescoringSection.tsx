@@ -9,6 +9,7 @@ import '@/components/prescoring-section/prescoring-section.scss';
 
 export default function PrescoringSection() {
 	const methods = useForm<PrescoringData>({
+		mode: 'onBlur',
 		defaultValues: {
 			amount: 150000,
 		},

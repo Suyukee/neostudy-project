@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { Controller, ControllerProps, useFormContext } from 'react-hook-form';
 import ErrorCrossIcon from '@/icons/ErrorCrossIcon';
+import CorrectlyIcon from '@/icons/CorrectlyIcon';
 import { FormElementInputProps } from '@/components/form-element-input/form-element-input-type';
 import '@/components/form-element-input/form-element-input.scss';
 
@@ -35,10 +36,16 @@ export default function FormElementInput({
 
 					<p className="form-element-input__error">{error}</p>
 
-					{error && (
-						<div className="form-element-input__error-icon">
+					{error ? (
+						<div className="form-element-input__icon">
 							<ErrorCrossIcon />
 						</div>
+					) : (
+						field.value && (
+							<div className="form-element-input__icon">
+								<CorrectlyIcon />
+							</div>
+						)
 					)}
 				</div>
 			);
