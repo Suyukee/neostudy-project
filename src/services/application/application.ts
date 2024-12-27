@@ -1,18 +1,7 @@
 import axios from 'axios';
+import { PrescoringData } from '@/services/application/application-types';
 
 const BASE_URL = 'http://localhost:8080/application';
-
-interface PrescoringData {
-	amount: number;
-	term: number;
-	firstName: string;
-	lastName: string;
-	middleName: string | null;
-	email: string;
-	birthdate: string | Date;
-	passportSeries: string;
-	passportNumber: string;
-}
 
 export const postApplication = async (body: PrescoringData) => {
 	body.amount = +body.amount;

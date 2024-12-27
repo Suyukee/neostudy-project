@@ -8,7 +8,7 @@ import Divider from '@/components/divider';
 import Loader from '@/components/loader';
 import { postApplication } from '@/services/application/application';
 import { FormRuler } from '@/utils/FormRuler';
-import { PrescoringData } from '@/components/prescoring-section/prescoring-section-type';
+import { PrescoringData } from '@/services/application/application-types';
 import '@/components/prescoring-section/prescoring-section.scss';
 
 export default function PrescoringSection() {
