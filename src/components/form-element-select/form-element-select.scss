@@ -1,0 +1,34 @@
+@use '@/assets/variables.scss' as *;
+
+.form-element-select {
+	position: relative;
+}
+
+.form-element-select__select {
+	padding: 13px 16px;
+	min-width: 160px;
+	width: 100%;
+	height: 40px;
+	background: #f9f5e3;
+	border: 1px solid rgb(128, 128, 128, 0.2);
+	border-radius: 6px;
+	outline: none;
+	font-size: 14px;
+}
+
+.form-element-select__select:focus {
+	padding: 12px 15px;
+	border: 2px solid #5b35d5;
+}
+
+.form-element-select__icon {
+	position: absolute;
+	right: 18px;
+	top: 11px;
+}
+
+select {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+}

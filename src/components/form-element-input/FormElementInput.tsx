@@ -11,6 +11,7 @@ export default function FormElementInput({
 	rules,
 	placeholder,
 	id,
+	disabled,
 	helperText,
 	classes,
 }: FormElementInputProps) {
@@ -32,6 +33,7 @@ export default function FormElementInput({
 						value={value}
 						placeholder={placeholder}
 						id={id}
+						disabled={disabled}
 					/>
 
 					<p className="form-element-input__error">{error}</p>

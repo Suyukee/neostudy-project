@@ -1,7 +1,8 @@
 import { useForm } from 'react-hook-form';
 import Form from '@/components/form';
-import FormElementInput from '@/components/form-element-input';
 import FormElementLabel from '@/components/form-element-label';
+import FormElementInput from '@/components/form-element-input';
+import FormElementSelect from '@/components/form-element-select';
 import Divider from '@/components/divider';
 import { FormRuler } from '@/utils/FormRuler';
 import { PrescoringData } from '@/components/prescoring-section/prescoring-section-type';
@@ -16,6 +17,13 @@ export default function PrescoringSection() {
 	});
 
 	methods.watch('amount');
+
+	const termOptions = [
+		{ label: '6 month', value: '6 month' },
+		{ label: '12 month', value: '12 month' },
+		{ label: '18 month', value: '18 month' },
+		{ label: '24 month', value: '24 month' },
+	];
 
 	const handleSubmit = (data: PrescoringData) => {
 		console.log('data: ', data);
@@ -107,7 +115,12 @@ export default function PrescoringSection() {
 							<FormElementLabel forId="term" required>
 								Select term
 							</FormElementLabel>
-							{/* TODO: Select */}
+							<FormElementSelect
+								name="term"
+								id="term"
+								values={termOptions}
+								rules={{ ...FormRuler.required }}
+							/>
 						</div>
 
 						<div className="form__item">

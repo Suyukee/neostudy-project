@@ -10,6 +10,7 @@ export interface FormElementInputProps {
 	rules?: RulesVariants;
 	placeholder?: string;
 	id?: string;
+	disabled?: boolean;
 	helperText?: string;
 	classes?: string;
 }

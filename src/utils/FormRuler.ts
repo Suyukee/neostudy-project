@@ -19,7 +19,7 @@ export class FormRuler {
 	static text = {
 		validate: (value: string) => {
 			const regExp = /^[a-z]+$/i;
-			return regExp.test(value);
+			return regExp.test(value) || value === '';
 		},
 	};
 
