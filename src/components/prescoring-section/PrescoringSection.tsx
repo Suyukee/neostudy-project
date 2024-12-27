@@ -33,11 +33,17 @@ export default function PrescoringSection() {
 
 	const handleSubmit = async (data: PrescoringData) => {
 		setIsLoading(true);
-		const result = await postApplication(data);
-		setIsLoading(false);
 
-		if (result === 200) {
-			methods.reset();
+		try {
+			const status = await postApplication(data);
+
+			if (status === 200) {
+				methods.reset();
+			}
+		} catch (error) {
+			console.error(error);
+		} finally {
+			setIsLoading(false);
 		}
 	};
 
