@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Form from '@/components/form';
 import FormElementLabel from '@/components/form-element-label';
 import FormElementInput from '@/components/form-element-input';
 import FormElementSelect from '@/components/form-element-select';
 import Divider from '@/components/divider';
+import Loader from '@/components/loader';
+import { postApplication } from '@/services/application/application';
 import { FormRuler } from '@/utils/FormRuler';
 import { PrescoringData } from '@/components/prescoring-section/prescoring-section-type';
 import '@/components/prescoring-section/prescoring-section.scss';
@@ -13,24 +16,36 @@ export default function PrescoringSection() {
 		mode: 'onBlur',
 		defaultValues: {
 			amount: 150000,
+			term: 6,
 		},
 	});
 
 	methods.watch('amount');
 
 	const termOptions = [
-		{ label: '6 month', value: '6 month' },
-		{ label: '12 month', value: '12 month' },
-		{ label: '18 month', value: '18 month' },
-		{ label: '24 month', value: '24 month' },
+		{ label: '6 month', value: 6 },
+		{ label: '12 month', value: 12 },
+		{ label: '18 month', value: 18 },
+		{ label: '24 month', value: 24 },
 	];
 
-	const handleSubmit = (data: PrescoringData) => {
-		console.log('data: ', data);
+	const [isLoading, setIsLoading] = useState(false);
+
+	const handleSubmit = async (data: PrescoringData) => {
+		setIsLoading(true);
+		const result = await postApplication(data);
+		setIsLoading(false);
+
+		if (result === 200) {
+			methods.reset();
+		}
 	};
+
+	if (isLoading) return <Loader />;
 
 	return (
 		<article className="prescoring-section">
+			{isLoading && <Loader />}
 			<Form onSubmit={handleSubmit} contextMethods={methods}>
 				<div className="prescoring-section__customize-card">
 					<div className="customize-card__amount">
@@ -58,7 +73,7 @@ export default function PrescoringSection() {
 
 					<div className="customize-card__text-value">
 						<h4>You have chosen the amount</h4>
-						<p>{methods.getValues().amount.toLocaleString()} ₽</p>
+						<p>{Number(methods.getValues().amount).toLocaleString()} ₽</p>
 						<div className="text-value__divider">
 							<Divider color="secondary" />
 						</div>

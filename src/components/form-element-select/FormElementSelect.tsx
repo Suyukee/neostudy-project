@@ -18,7 +18,7 @@ interface FormElementSelectProps {
 	name: string;
 	rules?: RulesVariants;
 	id?: string;
-	values: { label: string; value: string }[];
+	values: { label: string; value: string | number }[];
 	disabled?: boolean;
 	classes?: string;
 }
