@@ -1,27 +1,8 @@
 import { useCallback } from 'react';
-import {
-	Controller,
-	ControllerProps,
-	FieldValues,
-	RegisterOptions,
-	useFormContext,
-	ValidationRule,
-} from 'react-hook-form';
+import { Controller, ControllerProps, useFormContext } from 'react-hook-form';
 import SelectArrowIcon from '@/icons/SelectArrowIcon';
+import { FormElementSelectProps } from '@/components/form-element-select/form-element-select-type';
 import '@/components/form-element-select/form-element-select.scss';
-
-type RulesVariants = RegisterOptions<FieldValues, string> & {
-	maxNumber?: ValidationRule<number | string>;
-};
-
-interface FormElementSelectProps {
-	name: string;
-	rules?: RulesVariants;
-	id?: string;
-	values: { label: string; value: string | number }[];
-	disabled?: boolean;
-	classes?: string;
-}
 
 export default function FormElementSelect({
 	name,

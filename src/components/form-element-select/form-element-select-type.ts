@@ -4,13 +4,11 @@ type RulesVariants = RegisterOptions<FieldValues, string> & {
 	maxNumber?: ValidationRule<number | string>;
 };
 
-export interface FormElementInputProps {
+export interface FormElementSelectProps {
 	name: string;
-	type?: string;
 	rules?: RulesVariants;
-	placeholder?: string;
 	id?: string;
+	values: { label: string; value: string | number }[];
 	disabled?: boolean;
-	helperText?: string;
 	classes?: string;
 }
