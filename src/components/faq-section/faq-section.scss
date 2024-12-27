@@ -1,4 +1,5 @@
 @use '@/assets/variables.scss' as *;
+@use '@/assets/mixins.scss' as *;
 
 .faq-section {
 	margin-top: 32px;
@@ -7,10 +8,18 @@
 .faq-section__title {
 	font-size: 30px;
 	font-weight: bold;
+
+	@include media('max', 'tablet') {
+		font-size: 20px;
+	}
 }
 
 .faq-section__accordion {
 	margin-top: 32px;
+
+	@include media('max', 'tablet') {
+		margin-top: 16px;
+	}
 }
 
 .accordion__accordion-item,

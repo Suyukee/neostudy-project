@@ -9,6 +9,10 @@
 	background: white;
 	border-radius: 28px;
 	box-shadow: $box-shadow;
+
+	@include media('max', 'mobile') {
+		padding: 24px 16px;
+	}
 }
 
 .prescoring-section__customize-card {

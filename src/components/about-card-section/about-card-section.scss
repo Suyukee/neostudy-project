@@ -29,7 +29,7 @@
 
 	@include media('max', 'mobile') {
 		grid-template-columns: repeat(1, 1fr);
-		grid-template-rows: repeat(6, 1fr);
+		grid-template-rows: repeat(6, auto);
 		grid-template-areas:
 			'a'
 			'b'
