@@ -1,7 +1,8 @@
-import '@/components/card-section/card-section.scss';
 import Tooltip from '@/components/tooltip';
+import { CardSectionProps } from '@/components/card-section/card-section-types';
+import '@/components/card-section/card-section.scss';
 
-export default function CardSection() {
+export default function CardSection({ handleClick }: CardSectionProps) {
 	return (
 		<article className="card-section">
 			<h1 className="card-section__title">Platinum digital credit card</h1>
@@ -39,7 +40,9 @@ export default function CardSection() {
 			</ul>
 
 			<div className="card-section__button">
-				<button className="button-primary">Apply for card</button>
+				<button className="button-primary" onClick={handleClick}>
+					Apply for card
+				</button>
 			</div>
 		</article>
 	);

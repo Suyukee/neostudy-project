@@ -1,0 +1,15 @@
+@use '@/assets/mixins.scss' as *;
+
+.application-id {
+	margin: 20px auto 96px;
+	max-width: 1300px;
+	width: 100%;
+
+	@include media('max', 'laptop') {
+		padding: 0 20px;
+	}
+
+	@include media('max', 'tablet') {
+		padding: 0 10px;
+	}
+}

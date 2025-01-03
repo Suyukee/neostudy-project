@@ -58,4 +58,17 @@ export class FormRuler {
 			},
 		},
 	};
+
+	static pastDate = {
+		validate: {
+			date: FormRuler.date.validate.date,
+
+			pastDate: (value: string | Date) => {
+				const now = new Date();
+				const date = new Date(value);
+
+				return now >= date;
+			},
+		},
+	};
 }

@@ -1,0 +1,125 @@
+@use '@/assets/variables.scss' as *;
+@use '@/assets/mixins.scss' as *;
+
+.scoring-section {
+	margin-top: 42px;
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	background: white;
+	border-radius: 28px;
+	box-shadow: $box-shadow;
+
+	@include media('max', 'mobile') {
+		padding: 24px 16px;
+	}
+}
+
+.scoring-section__title {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.title__scoring-text {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	h2 {
+		font-size: 30px;
+		font-weight: bold;
+	}
+
+	p {
+		font-weight: 500;
+	}
+
+	@include media('max', 'tablet') {
+		h2 {
+			font-size: 20px;
+		}
+	}
+}
+
+.scoring-section__person-form {
+	margin-top: 41px;
+	display: grid;
+	grid-template:
+		'a a b b c c'
+		'd d d e e e';
+	gap: 16px;
+
+	@include media('max', 'tablet') {
+		grid-template:
+			'a b'
+			'c d'
+			'e e';
+	}
+
+	@include media('max', 'mobile') {
+		grid-template:
+			'a'
+			'b'
+			'c'
+			'd'
+			'e';
+	}
+}
+
+.person-form__item:nth-child(1) {
+	grid-area: a;
+}
+.person-form__item:nth-child(2) {
+	grid-area: b;
+}
+.person-form__item:nth-child(3) {
+	grid-area: c;
+}
+.person-form__item:nth-child(4) {
+	grid-area: d;
+}
+.person-form__item:nth-child(5) {
+	grid-area: e;
+}
+
+.person-form__item,
+.employment-form__item {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.scoring-section__employment {
+	margin-top: 32px;
+}
+
+.employment__title {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.employment__employment-form {
+	margin-top: 32px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 16px;
+
+	@include media('max', 'tablet') {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include media('max', 'mobile') {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+.scoring-section__button {
+	margin-top: 24px;
+	display: flex;
+	justify-content: flex-end;
+
+	button {
+		width: 148px;
+		border-radius: 8px;
+	}
+}
