@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Form from '@/components/form';
 import FormElementLabel from '@/components/form-element-label';
@@ -6,7 +5,7 @@ import FormElementInput from '@/components/form-element-input';
 import FormElementSelect from '@/components/form-element-select';
 import Divider from '@/components/divider';
 import Loader from '@/components/loader';
-import { postApplication } from '@/services/application/application';
+import { usePostApplicationMutation } from '@/services/application/application';
 import { FormRuler } from '@/utils/FormRuler';
 import { PrescoringData } from '@/services/application/application-types';
 import '@/components/prescoring-section/prescoring-section.scss';
@@ -29,26 +28,16 @@ export default function PrescoringSection() {
 		{ label: '24 month', value: 24 },
 	];
 
-	const [isLoading, setIsLoading] = useState(false);
+	const [postApplication, { isLoading, isSuccess: postApplicationIsSuccess }] =
+		usePostApplicationMutation();
 
 	const handleSubmit = async (data: PrescoringData) => {
-		setIsLoading(true);
-
-		try {
-			const status = await postApplication(data);
-
-			if (status === 200) {
-				methods.reset();
-			}
-		} catch (error) {
-			console.error(error);
-		} finally {
-			setIsLoading(false);
-		}
+		await postApplication(data);
 	};
 
 	if (isLoading) return <Loader />;
 
+	if (postApplicationIsSuccess) return <p>Application is posted</p>;
 	return (
 		<article className="prescoring-section">
 			{isLoading && <Loader />}
@@ -88,8 +77,8 @@ export default function PrescoringSection() {
 				<div className="prescoring-section__contact-info">
 					<h4 className="contact-info__title">Contact Information</h4>
 
-					<div className="contact-info__form">
-						<div className="form__item">
+					<div className="contact-info__contact-form">
+						<div className="contact-form__item">
 							<FormElementLabel forId="lastName" required>
 								Your last name
 							</FormElementLabel>
@@ -106,7 +95,7 @@ export default function PrescoringSection() {
 							/>
 						</div>
 
-						<div className="form__item">
+						<div className="contact-form__item">
 							<FormElementLabel forId="firstName" required>
 								Your first name
 							</FormElementLabel>
@@ -120,7 +109,7 @@ export default function PrescoringSection() {
 							/>
 						</div>
 
-						<div className="form__item">
+						<div className="contact-form__item">
 							<FormElementLabel forId="middleName">Your patronymic</FormElementLabel>
 							<FormElementInput
 								name="middleName"
@@ -132,7 +121,7 @@ export default function PrescoringSection() {
 							/>
 						</div>
 
-						<div className="form__item">
+						<div className="contact-form__item">
 							<FormElementLabel forId="term" required>
 								Select term
 							</FormElementLabel>
@@ -144,7 +133,7 @@ export default function PrescoringSection() {
 							/>
 						</div>
 
-						<div className="form__item">
+						<div className="contact-form__item">
 							<FormElementLabel forId="email" required>
 								Your email
 							</FormElementLabel>
@@ -161,7 +150,7 @@ export default function PrescoringSection() {
 							/>
 						</div>
 
-						<div className="form__item">
+						<div className="contact-form__item">
 							<FormElementLabel forId="birthdate" required>
 								Your date of birth
 							</FormElementLabel>
@@ -177,7 +166,7 @@ export default function PrescoringSection() {
 							/>
 						</div>
 
-						<div className="form__item">
+						<div className="contact-form__item">
 							<FormElementLabel forId="passportSeries" required>
 								Your passport series
 							</FormElementLabel>
@@ -195,7 +184,7 @@ export default function PrescoringSection() {
 							/>
 						</div>
 
-						<div className="form__item">
+						<div className="contact-form__item">
 							<FormElementLabel forId="passportNumber" required>
 								Your passport number
 							</FormElementLabel>

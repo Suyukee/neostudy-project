@@ -95,7 +95,7 @@
 	}
 }
 
-.contact-info__form {
+.contact-info__contact-form {
 	margin-top: 10px;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -110,7 +110,7 @@
 	}
 }
 
-.form__item {
+.contact-form__item {
 	display: flex;
 	flex-direction: column;
 	gap: 8px;

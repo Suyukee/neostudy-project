@@ -1,17 +1,19 @@
-import axios from 'axios';
-import { PrescoringData } from '@/services/application/application-types';
+import { commonApi, servicesTags } from '@/services';
 
-const BASE_URL = 'http://localhost:8080/application';
+const serviceTag = servicesTags.application;
+const BASEURL = 'application';
 
-export const postApplication = async (body: PrescoringData) => {
-	body.amount = +body.amount;
-	body.term = +body.term;
+export const applicationApi = commonApi.injectEndpoints({
+	endpoints: (builder) => ({
+		postApplication: builder.mutation({
+			query: (body) => ({
+				method: 'POST',
+				url: BASEURL,
+				body,
+			}),
+			invalidatesTags: [serviceTag],
+		}),
+	}),
+});
 
-	if (body.middleName === '') {
-		body.middleName = null;
-	}
-
-	const { status } = await axios.post(BASE_URL, body);
-
-	return status;
-};
+export const { usePostApplicationMutation } = applicationApi;
