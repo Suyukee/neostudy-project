@@ -1,0 +1,97 @@
+@use '@/assets/variables.scss' as *;
+@use '@/assets/mixins.scss' as *;
+
+.prescoring-section {
+	margin-top: 46px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 14px;
+}
+
+.prescoring-section__title {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.prescoring-section__stepper {
+	display: flex;
+	gap: 50px;
+	list-style: none;
+
+	@include media('max', 'tablet') {
+		gap: 20px;
+	}
+
+	@include media('max', 'mobile') {
+		gap: 10px;
+	}
+}
+
+.stepper__step {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.step__header {
+	display: flex;
+	align-items: center;
+	gap: 36px;
+
+	.header__step-divider {
+		height: 2px;
+	}
+
+	@include media('max', 'tablet') {
+		gap: 10px;
+	}
+
+	@include media('max', 'mobile') {
+		gap: 4px;
+	}
+}
+
+.header__step-count {
+	min-width: 48px;
+	height: 48px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #d9d9d9;
+	border-radius: 50%;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.step__description {
+	text-align: center;
+	font-weight: 500;
+}
+
+.prescoring-section__prescoring {
+	margin-top: 46px;
+	width: 100%;
+}
+
+.prescoring__result-message {
+	padding: 24px 20px 34px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 32px;
+	border: 1px solid $purple-border;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.result-message__title {
+	color: $text-primary;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.result-message__description {
+	color: $features-color;
+	font-weight: 500;
+}
