@@ -1,0 +1,69 @@
+@use '@/assets/variables.scss' as *;
+@use '@/assets/mixins.scss' as *;
+
+.prescoring-offers {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 40px;
+
+	@include media('max', 'laptop') {
+		gap: 20px;
+	}
+
+	@include media('max', 'tablet') {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 10px;
+	}
+
+	@include media('max', 'mobile') {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+.prescoring-offers__offer {
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: white;
+	border-radius: 28px;
+	box-shadow: $box-shadow;
+
+	@include media('max', 'tablet') {
+		padding: 24px;
+	}
+}
+
+.prescoring-offers__offer:hover {
+	padding: 30px;
+	border: 2px solid $button;
+}
+
+.offer__description {
+	margin-top: 32px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 14px;
+	font-weight: 500;
+
+	p {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		text-align: center;
+	}
+}
+
+.offer__button {
+	margin-top: 90px;
+
+	button {
+		min-width: 148px;
+		border-radius: 8px;
+	}
+
+	@include media('max', 'tablet') {
+		margin-top: 40px;
+	}
+}

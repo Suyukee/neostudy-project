@@ -1,11 +1,41 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { commonApi } from '@/services';
+import {
+	persistStore,
+	persistReducer,
+	FLUSH,
+	REHYDRATE,
+	PAUSE,
+	PERSIST,
+	PURGE,
+	REGISTER,
+} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import offersSlice from '@/redux/offers';
+import commonApi from '@/services';
 
-export const reducer = combineReducers({
+const rootReducer = combineReducers({
 	[commonApi.reducerPath]: commonApi.reducer,
+	offers: offersSlice.reducer,
 });
+
+const persistConfig = {
+	key: 'root',
+	version: 1,
+	storage,
+	whitelist: ['offers'],
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-	reducer,
-	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(commonApi.middleware),
+	reducer: persistedReducer,
+	middleware: (getDefaultMiddleware) =>
+		getDefaultMiddleware({
+			serializableCheck: {
+				ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+			},
+		}).concat(commonApi.middleware),
 });
+
+export const perstistor = persistStore(store);
+export default store;

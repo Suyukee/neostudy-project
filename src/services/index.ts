@@ -6,7 +6,7 @@ export const servicesTags = {
 
 export const tagTypes = Object.values(servicesTags);
 
-export const commonApi = createApi({
+const commonApi = createApi({
 	tagTypes,
 	reducerPath: 'commonApi',
 	baseQuery: fetchBaseQuery({
@@ -14,3 +14,5 @@ export const commonApi = createApi({
 	}),
 	endpoints: () => ({}),
 });
+
+export default commonApi;

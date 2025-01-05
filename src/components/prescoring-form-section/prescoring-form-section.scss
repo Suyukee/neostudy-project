@@ -1,8 +1,7 @@
 @use '@/assets/variables.scss' as *;
 @use '@/assets/mixins.scss' as *;
 
-.prescoring-section {
-	margin-top: 42px;
+.prescoring-form {
 	padding: 32px;
 	display: flex;
 	flex-direction: column;
@@ -15,7 +14,7 @@
 	}
 }
 
-.prescoring-section__customize-card {
+.prescoring-form__customize-card {
 	display: grid;
 	grid-template-columns: 1fr auto 1fr;
 	gap: 40px;
@@ -79,7 +78,7 @@
 	max-width: 220px;
 }
 
-.prescoring-section__contact-info {
+.prescoring-form__contact-info {
 	display: flex;
 	flex-direction: column;
 	gap: 16px;

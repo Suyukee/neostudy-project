@@ -1,4 +1,4 @@
-import { commonApi, servicesTags } from '@/services';
+import commonApi, { servicesTags } from '@/services';
 
 const serviceTag = servicesTags.application;
 const BASEURL = 'application';
@@ -13,7 +13,16 @@ export const applicationApi = commonApi.injectEndpoints({
 			}),
 			invalidatesTags: [serviceTag],
 		}),
+
+		postAplicationApply: builder.mutation({
+			query: (body) => ({
+				method: 'POST',
+				url: `${BASEURL}/apply`,
+				body,
+			}),
+			invalidatesTags: [serviceTag],
+		}),
 	}),
 });
 
-export const { usePostApplicationMutation } = applicationApi;
+export const { usePostApplicationMutation, usePostAplicationApplyMutation } = applicationApi;
