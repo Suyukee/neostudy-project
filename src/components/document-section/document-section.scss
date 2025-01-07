@@ -1,0 +1,41 @@
+@use '@/assets/variables.scss' as *;
+@use '@/assets/mixins.scss' as *;
+
+.document-section {
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	background: white;
+	border-radius: 28px;
+	box-shadow: $box-shadow;
+
+	@include media('max', 'mobile') {
+		padding: 24px 16px;
+	}
+}
+
+.document-section__title {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.title__document-text {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	h2 {
+		font-size: 30px;
+		font-weight: bold;
+	}
+
+	p {
+		font-weight: 500;
+	}
+
+	@include media('max', 'tablet') {
+		h2 {
+			font-size: 20px;
+		}
+	}
+}

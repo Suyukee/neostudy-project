@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
 import { selectCreditOffers } from '@/redux/offers/offersGetters';
-import ScoringSection from '@/components/scoring-section';
+import DocumentSection from '@/components/document-section';
 
-export default function ApplicationIdPage() {
+export default function DocumentPage() {
 	const offers = useSelector(selectCreditOffers);
 	const applicationId = offers[0].applicationId;
 
-	return <ScoringSection applicationId={applicationId} />;
+	return <DocumentSection applicationId={applicationId} />;
 }
