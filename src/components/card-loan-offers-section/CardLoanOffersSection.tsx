@@ -1,6 +1,6 @@
 import { useAppDispatch } from '@/redux/hooks';
 import { setChossedOfferIdAction } from '@/redux/offers/offersActions';
-import { usePostAplicationApplyMutation } from '@/services/application/application';
+import { usePostApplicationApplyMutation } from '@/services/application/application';
 import { CardLoanOfferProps } from '@/components/card-loan-offers-section/card-loan-offers-section-types';
 import CorrectlyIcon from '@/icons/CorrectlyIcon';
 import ErrorCrossIcon from '@/icons/ErrorCrossIcon';
@@ -10,7 +10,7 @@ import '@/components/card-loan-offers-section/card-loan-offers-section.scss';
 export default function CardLoanOffers({ offers }: CardLoanOfferProps) {
 	const dispatch = useAppDispatch();
 
-	const [postApplicationApply, { isLoading }] = usePostAplicationApplyMutation();
+	const [postApplicationApply, { isLoading }] = usePostApplicationApplyMutation();
 
 	const handleSelectOffer = async (id: number) => {
 		try {

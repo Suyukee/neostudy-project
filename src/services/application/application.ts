@@ -1,11 +1,13 @@
 import commonApi, { servicesTags } from '@/services';
+import { PrescoringData, ScoringFormPut } from '@/services/application/application-types';
+import { CardLoanOfferType } from '@/types/offers';
 
 const serviceTag = servicesTags.application;
 const BASEURL = 'application';
 
 export const applicationApi = commonApi.injectEndpoints({
 	endpoints: (builder) => ({
-		postApplication: builder.mutation({
+		postApplication: builder.mutation<undefined, PrescoringData>({
 			query: (body) => ({
 				method: 'POST',
 				url: BASEURL,
@@ -14,7 +16,7 @@ export const applicationApi = commonApi.injectEndpoints({
 			invalidatesTags: [serviceTag],
 		}),
 
-		postAplicationApply: builder.mutation({
+		postApplicationApply: builder.mutation<undefined, CardLoanOfferType>({
 			query: (body) => ({
 				method: 'POST',
 				url: `${BASEURL}/apply`,
@@ -22,7 +24,20 @@ export const applicationApi = commonApi.injectEndpoints({
 			}),
 			invalidatesTags: [serviceTag],
 		}),
+
+		putApplicationRegistration: builder.mutation<undefined, ScoringFormPut>({
+			query: ({ id, body }) => ({
+				method: 'PUT',
+				url: `${BASEURL}/registration/${id}`,
+				body,
+			}),
+			invalidatesTags: [serviceTag],
+		}),
 	}),
 });
 
-export const { usePostApplicationMutation, usePostAplicationApplyMutation } = applicationApi;
+export const {
+	usePostApplicationMutation,
+	usePostApplicationApplyMutation,
+	usePutApplicationRegistrationMutation,
+} = applicationApi;

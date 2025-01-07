@@ -17,7 +17,7 @@ export default function PrescroingSection({ step, offers }: PrescroingSectionPro
 
 			<ul className="prescoring-section__stepper">
 				{stepsDescription.map((item, index) => (
-					<li className="stepper__step">
+					<li className="stepper__step" key={index}>
 						<div className="step__header" key={index}>
 							<div className="header__step-count">{index + 1}</div>
 							<Divider classes="header__step-divider" color="secondary" />

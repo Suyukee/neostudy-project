@@ -1,28 +1,29 @@
 import { useForm } from 'react-hook-form';
+import { usePutApplicationRegistrationMutation } from '@/services/application/application';
+import { ScoringForm } from '@/services/application/application-types';
+import { FormRuler } from '@/utils/FormRuler';
+import { ScoringFormProps } from '@/components/scoring-section/scoring-section-types';
 import Form from '@/components/form';
 import FormElementLabel from '@/components/form-element-label';
 import FormElementSelect from '@/components/form-element-select';
 import FormElementInput from '@/components/form-element-input';
-import { FormRuler } from '@/utils/FormRuler';
+import Loader from '@/components/loader';
+import LoanStepMessage from '@/components/loan-step-message';
 import '@/components/scoring-section/scoring-section.scss';
 
-interface ScoringSection {
-	gender: 'MALE' | 'FAMALE';
-	maritalStatus: 'MARRIED' | 'DIVORCED' | 'SINGLE' | 'WIDOW_WIDOWER';
-	dependentAmount: 'number';
-	passportIssueDate: 'string';
-	passportIssueBranch: 'string';
-	employmentStatus: 'UNEMPLOYED' | 'SELF_EMPLOYED' | 'EMPLOYED' | 'BUSINESS_OWNER';
-	employerINN: 'number';
-	salary: 'number';
-	position: 'WORKER' | 'MID_MANAGER' | 'TOP_MANAGER' | 'OWNER';
-	workExperienceTotal: 'number';
-	workExperienceCurrent: 'number';
-}
-
-export default function ScoringSection() {
-	const methods = useForm<ScoringSection>({
+export default function ScoringSection({ applicationId }: ScoringFormProps) {
+	const methods = useForm<ScoringForm>({
 		mode: 'onBlur',
+		defaultValues: {
+			gender: 'MALE',
+			maritalStatus: 'SINGLE',
+			dependentAmount: 0,
+			employment: {
+				employmentStatus: 'EMPLOYED',
+				position: 'WORKER',
+			},
+			account: '11223344556677890000',
+		},
 	});
 
 	const genderOptions = [
@@ -31,9 +32,9 @@ export default function ScoringSection() {
 	];
 
 	const maritalStatusOptions = [
+		{ label: 'Single', value: 'SINGLE' },
 		{ label: 'Married', value: 'MARRIED' },
 		{ label: 'Divorced', value: 'DIVORCED' },
-		{ label: 'Single', value: 'SINGLE' },
 		{ label: 'Widow/Widower', value: 'WIDOW_WIDOWER' },
 	];
 
@@ -47,9 +48,9 @@ export default function ScoringSection() {
 	];
 
 	const employmentStatusOptions = [
+		{ label: 'Employed', value: 'EMPLOYED' },
 		{ label: 'Unemployed', value: 'UNEMPLOYED' },
 		{ label: 'Self emloyed', value: 'SELF_EMPLOYED' },
-		{ label: 'Employed', value: 'EMPLOYED' },
 		{ label: 'Business owner', value: 'BUSINESS_OWNER' },
 	];
 
@@ -60,9 +61,26 @@ export default function ScoringSection() {
 		{ label: 'Owner', value: 'OWNER' },
 	];
 
-	const handleSubmit = (data: ScoringSection) => {
-		console.log(data);
+	const [putApplicationRegistration, { isLoading, isSuccess }] =
+		usePutApplicationRegistrationMutation();
+
+	const handleSubmit = async (data: ScoringForm) => {
+		try {
+			await putApplicationRegistration({ id: applicationId, body: data });
+		} catch (error) {
+			console.error(error);
+		}
 	};
+
+	if (isLoading) return <Loader />;
+
+	if (isSuccess)
+		return (
+			<LoanStepMessage
+				title="Wait for a decision on the application"
+				description="The answer will come to your mail within 10 minutes"
+			/>
+		);
 
 	return (
 		<article className="scoring-section">
@@ -149,7 +167,7 @@ export default function ScoringSection() {
 								Your employment status
 							</FormElementLabel>
 							<FormElementSelect
-								name="employmentStatus"
+								name="employment.employmentStatus"
 								id="employmentStatus"
 								values={employmentStatusOptions}
 								rules={{ ...FormRuler.required }}
@@ -161,7 +179,7 @@ export default function ScoringSection() {
 								Your employer INN
 							</FormElementLabel>
 							<FormElementInput
-								name="employerINN"
+								name="employment.employerINN"
 								id="employerINN"
 								type="number"
 								placeholder="000000000000"
@@ -180,7 +198,7 @@ export default function ScoringSection() {
 								Your salary
 							</FormElementLabel>
 							<FormElementInput
-								name="salary"
+								name="employment.salary"
 								id="salary"
 								type="text"
 								placeholder="For example 100 000"
@@ -196,7 +214,7 @@ export default function ScoringSection() {
 								Your position
 							</FormElementLabel>
 							<FormElementSelect
-								name="position"
+								name="employment.position"
 								id="position"
 								values={positionOptions}
 								rules={{ ...FormRuler.required }}
@@ -208,7 +226,7 @@ export default function ScoringSection() {
 								Your work experience total
 							</FormElementLabel>
 							<FormElementInput
-								name="workExperienceTotal"
+								name="employment.workExperienceTotal"
 								id="workExperienceTotal"
 								type="text"
 								placeholder="For example 10"
@@ -225,7 +243,7 @@ export default function ScoringSection() {
 								Your work experience current
 							</FormElementLabel>
 							<FormElementInput
-								name="workExperienceCurrent"
+								name="employment.workExperienceCurrent"
 								id="workExperienceCurrent"
 								type="text"
 								placeholder="For example 2"
