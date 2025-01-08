@@ -1,0 +1,23 @@
+.table {
+	border-collapse: collapse;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 2%;
+}
+
+.table-header {
+	.table-cell {
+		color: #4a5568;
+		text-align: left;
+		text-transform: uppercase;
+	}
+}
+
+.table-row {
+	border-bottom: 1px solid #e2e8f0;
+}
+
+.table-cell {
+	padding: 12px 0;
+	color: #1a202c;
+}

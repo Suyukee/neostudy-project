@@ -87,7 +87,7 @@ export default function ScoringSection({ applicationId }: ScoringFormProps) {
 			<Form onSubmit={handleSubmit} contextMethods={methods}>
 				<div className="scoring-section__title">
 					<div className="title__scoring-text">
-						<h2>Customize your card</h2>
+						<h2>Continuation of the application</h2>
 						<p>Step 2 of 5</p>
 					</div>
 				</div>

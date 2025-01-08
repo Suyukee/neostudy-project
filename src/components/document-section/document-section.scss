@@ -27,10 +27,12 @@
 	h2 {
 		font-size: 30px;
 		font-weight: bold;
+		letter-spacing: 2%;
 	}
 
 	p {
 		font-weight: 500;
+		letter-spacing: 2%;
 	}
 
 	@include media('max', 'tablet') {
@@ -38,4 +40,8 @@
 			font-size: 20px;
 		}
 	}
+}
+
+.document-section__table {
+	margin-top: 76px;
 }
