@@ -29,7 +29,7 @@ export const applicationApi = commonApi.injectEndpoints({
 			query: ({ id, body }) => ({
 				method: 'PUT',
 				url: `${BASEURL}/registration/${id}`,
-				body,
+				body: { ...body, account: '11223344556677889900' },
 			}),
 			invalidatesTags: [serviceTag],
 		}),

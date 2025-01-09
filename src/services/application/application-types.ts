@@ -24,7 +24,7 @@ export interface ScoringForm {
 		workExperienceTotal: number;
 		workExperienceCurrent: number;
 	};
-	account: '11223344556677890000';
+	account: '11223344556677889900';
 }
 
 export interface ScoringFormPut {

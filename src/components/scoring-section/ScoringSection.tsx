@@ -22,7 +22,6 @@ export default function ScoringSection({ applicationId }: ScoringFormProps) {
 				employmentStatus: 'EMPLOYED',
 				position: 'WORKER',
 			},
-			account: '11223344556677890000',
 		},
 	});
 
