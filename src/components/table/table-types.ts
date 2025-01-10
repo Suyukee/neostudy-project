@@ -30,6 +30,13 @@ export interface TableCellProps {
 	children: ReactNode | ReactNode[];
 }
 
+export interface TableSortLabelProps {
+	direction?: 'asc' | 'desc';
+	onClick: () => void;
+	classes?: string;
+	children: ReactNode | ReactNode[];
+}
+
 export interface UseContextTableType {
 	variant?: 'table' | 'header' | 'body';
 }

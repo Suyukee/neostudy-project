@@ -6,9 +6,11 @@ import {
 	TableHeaderProps,
 	TableProps,
 	TableRowProps,
+	TableSortLabelProps,
 	UseContextTableType,
 } from '@/components/table/table-types';
 import '@/components/table/table.scss';
+import TableSortArrowIcon from '@/icons/TableSortArrowIcon';
 
 export function Table({ classes, children }: TableProps) {
 	return (
@@ -44,4 +46,13 @@ export function TableCell({ classes, children }: TableCellProps) {
 	const Component = variant === 'header' ? 'th' : 'td';
 
 	return <Component className={`table-cell ${classes}`}>{children}</Component>;
+}
+
+export function TableSortLabel({ direction, onClick, classes, children }: TableSortLabelProps) {
+	return (
+		<span className={`table-sort-label ${classes}`} onClick={onClick}>
+			{children}
+			<TableSortArrowIcon direction={direction} />
+		</span>
+	);
 }

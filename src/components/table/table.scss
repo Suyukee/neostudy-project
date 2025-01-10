@@ -21,3 +21,10 @@
 	padding: 12px 0;
 	color: #1a202c;
 }
+
+.table-sort-label {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	cursor: pointer;
+}
