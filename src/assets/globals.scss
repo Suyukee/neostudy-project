@@ -61,6 +61,9 @@ input[type='number'] {
 // Primary button
 .button-primary {
 	padding: 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	background: $button;
 	color: white;
 	border-radius: 16px;

@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const servicesTags = {
 	application: 'APPLICATION' as const,
-	admin: 'ADMIN' as const,
+	document: 'DOCUMENT' as const,
 };
 
 export const tagTypes = Object.values(servicesTags);

@@ -64,11 +64,9 @@ export default function ScoringSection({ applicationId }: ScoringFormProps) {
 		usePutApplicationRegistrationMutation();
 
 	const handleSubmit = async (data: ScoringForm) => {
-		try {
-			await putApplicationRegistration({ id: applicationId, body: data });
-		} catch (error) {
-			console.error(error);
-		}
+		await putApplicationRegistration({ id: applicationId, body: data }).catch((error) =>
+			console.error(error),
+		);
 	};
 
 	if (isLoading) return <Loader />;

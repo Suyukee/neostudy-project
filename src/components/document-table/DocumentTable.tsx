@@ -44,7 +44,7 @@ export default function DocumentTable({ applicationId }: DocumentTableProps) {
 	};
 
 	const getSortedData = (data: ApiPaymentData[]) => {
-		const sortData = Array.from(data);
+		const sortData = [...data];
 
 		if (order === 'asc') {
 			return sortData.sort((a, b) => (a[orderBy] > b[orderBy] ? 1 : -1));
