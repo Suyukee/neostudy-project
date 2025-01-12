@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { LoanStepMessageProps } from './loan-step-message-types';
 import '@/components/loan-step-message/loan-step-message.scss';
 
@@ -8,7 +9,7 @@ export default function LoanStepMessage({
 }: LoanStepMessageProps) {
 	return (
 		<article className="loan-step-message-section">
-			{variant === 'finally' && <img src="" alt="" />}
+			{variant === 'finally' && <img src="/images/surprise.png" alt="" />}
 
 			<div className="loan-step-message-section__loan-step-message">
 				<h2 className="loan-step-message__title">{title}</h2>
@@ -16,7 +17,11 @@ export default function LoanStepMessage({
 			</div>
 
 			{variant === 'finally' && (
-				<button className="button-primary">View other offers of our bank</button>
+				<div>
+					<Link to="/" className="button-primary">
+						View other offers of our bank
+					</Link>
+				</div>
 			)}
 		</article>
 	);

@@ -1,11 +1,14 @@
 @use '@/assets/variables.scss' as *;
 
 .loan-step-message-section {
+	margin-top: 16px;
 	width: 100%;
 	min-height: 370px;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	gap: 32px;
 }
 
 .loan-step-message-section__loan-step-message {
