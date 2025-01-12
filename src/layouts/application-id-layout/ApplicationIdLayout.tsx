@@ -6,8 +6,6 @@ import ErrorPage from '@/pages/error-page';
 export default function ApplicationIdLayout() {
 	const applicationId = useSelector(selectApplicationId);
 
-	console.log(applicationId);
-
 	const applicationIdIsMatch = useMatch(`/loan/${applicationId}/*`);
 
 	if (!applicationIdIsMatch) return <ErrorPage />;

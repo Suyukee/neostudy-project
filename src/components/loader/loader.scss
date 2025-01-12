@@ -1,3 +1,5 @@
+@use '@/assets/variables.scss' as *;
+
 .loader {
 	padding: 40px 0;
 	width: 100%;
@@ -27,6 +29,6 @@
 	width: 70px;
 	height: 70px;
 	position: relative;
-	border: 2px solid #808080;
+	border: 2px solid $light-grey;
 	border-radius: 50%;
 }

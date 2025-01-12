@@ -89,7 +89,7 @@
 	font-size: 20px;
 	font-weight: bold;
 	letter-spacing: 2;
-	color: #808080;
+	color: $light-grey;
 
 	@include media('max', 'mobile') {
 		gap: 5px;

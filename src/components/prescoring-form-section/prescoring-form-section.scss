@@ -57,7 +57,7 @@
 	width: 1px;
 	height: 100%;
 	border: none;
-	border-left: 1px dashed #808080;
+	border-left: 1px dashed $light-grey;
 
 	@include media('max', 'mobile') {
 		display: none;

@@ -1,4 +1,5 @@
 import commonApi, { servicesTags } from '@/services';
+import { SendCodeBody } from '@/services/document/document-types';
 
 const serviceTag = servicesTags.document;
 const BASEURL = 'document';
@@ -20,7 +21,17 @@ export const documentApi = commonApi.injectEndpoints({
 			}),
 			invalidatesTags: [serviceTag],
 		}),
+
+		sendCode: builder.mutation<void, SendCodeBody>({
+			query: ({ id, code }) => ({
+				method: 'POST',
+				url: `${BASEURL}/${id}/sign/code`,
+				body: code,
+			}),
+			invalidatesTags: [serviceTag],
+		}),
 	}),
 });
 
-export const { useCreateDocumentMutation, useSignDocumentMutation } = documentApi;
+export const { useCreateDocumentMutation, useSignDocumentMutation, useSendCodeMutation } =
+	documentApi;
