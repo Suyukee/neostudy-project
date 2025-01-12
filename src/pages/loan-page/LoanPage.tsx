@@ -1,6 +1,6 @@
 import { useMemo, useRef } from 'react';
 import { useSelector } from 'react-redux';
-import { selectChoosedOfferId, selectCreditOffers } from '@/redux/offers/offersGetters';
+import { selectChoosedOfferId, selectCreditOffers } from '@/redux/offers/offers-getters';
 import PlatinumCardSection from '@/components/card-section';
 import CardTabs from '@/components/card-tabs';
 import PrescroingSection from '@/components/prescroing-section';

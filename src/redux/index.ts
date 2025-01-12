@@ -10,19 +10,21 @@ import {
 	REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import offersSlice from '@/redux/offers';
 import commonApi from '@/services';
+import offersSlice from '@/redux/offers';
+import applicationSlice from '@/redux/application';
 
 const rootReducer = combineReducers({
 	[commonApi.reducerPath]: commonApi.reducer,
 	offers: offersSlice.reducer,
+	application: applicationSlice.reducer,
 });
 
 const persistConfig = {
 	key: 'root',
 	version: 1,
 	storage,
-	whitelist: ['offers'],
+	whitelist: ['offers', 'application'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

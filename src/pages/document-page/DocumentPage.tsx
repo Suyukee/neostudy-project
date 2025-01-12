@@ -1,10 +1,11 @@
 import { useSelector } from 'react-redux';
-import { selectCreditOffers } from '@/redux/offers/offersGetters';
+import { selectApplicationId } from '@/redux/application/application-getters';
 import DocumentSection from '@/components/document-section';
 
 export default function DocumentPage() {
-	const offers = useSelector(selectCreditOffers);
-	const applicationId = offers[0].applicationId;
+	const applicationId = useSelector(selectApplicationId);
+
+	if (!applicationId) return;
 
 	return <DocumentSection applicationId={applicationId} />;
 }

@@ -1,11 +1,12 @@
 import { Outlet, useMatch } from 'react-router';
 import { useSelector } from 'react-redux';
-import { selectCreditOffers } from '@/redux/offers/offersGetters';
+import { selectApplicationId } from '@/redux/application/application-getters';
 import ErrorPage from '@/pages/error-page';
 
 export default function ApplicationIdLayout() {
-	const offers = useSelector(selectCreditOffers);
-	const applicationId = offers[0].applicationId;
+	const applicationId = useSelector(selectApplicationId);
+
+	console.log(applicationId);
 
 	const applicationIdIsMatch = useMatch(`/loan/${applicationId}/*`);
 

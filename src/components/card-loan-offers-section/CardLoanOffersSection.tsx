@@ -1,11 +1,12 @@
 import { useAppDispatch } from '@/redux/hooks';
-import { setChossedOfferIdAction } from '@/redux/offers/offersActions';
+import { setChoosedOfferIdAction } from '@/redux/offers/offers-actions';
 import { usePostApplicationApplyMutation } from '@/services/application/application';
 import { CardLoanOfferProps } from '@/components/card-loan-offers-section/card-loan-offers-section-types';
 import CorrectlyIcon from '@/icons/CorrectlyIcon';
 import ErrorCrossIcon from '@/icons/ErrorCrossIcon';
 import Loader from '@/components/loader';
 import '@/components/card-loan-offers-section/card-loan-offers-section.scss';
+import { setApplicationIdAction } from '@/redux/application/application-actions';
 
 export default function CardLoanOffers({ offers }: CardLoanOfferProps) {
 	const dispatch = useAppDispatch();
@@ -16,7 +17,10 @@ export default function CardLoanOffers({ offers }: CardLoanOfferProps) {
 		try {
 			await postApplicationApply(offers[id]);
 
-			dispatch(setChossedOfferIdAction(id));
+			dispatch(setChoosedOfferIdAction(id));
+
+			const applicationId = offers[0].applicationId;
+			dispatch(setApplicationIdAction(applicationId));
 		} catch (error) {
 			console.error(error);
 		}

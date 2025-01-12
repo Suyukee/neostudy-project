@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState: InitialOffersState = {
 	offers: [],
-	chossedOfferId: null,
+	choosedOfferId: null,
 };
 
 const offersSlice = createSlice({
@@ -13,8 +13,9 @@ const offersSlice = createSlice({
 		setCreditOffers: (state, action: PayloadAction<CardLoanOfferType[]>) => {
 			state.offers = action.payload;
 		},
-		setChossedOfferId: (state, action: PayloadAction<number>) => {
-			state.chossedOfferId = action.payload;
+
+		setChoosedOfferId: (state, action: PayloadAction<number>) => {
+			state.choosedOfferId = action.payload;
 		},
 	},
 });

@@ -1,10 +1,11 @@
 import { useSelector } from 'react-redux';
-import { selectCreditOffers } from '@/redux/offers/offersGetters';
+import { selectApplicationId } from '@/redux/application/application-getters';
 import DocumentSignSection from '@/components/document-sign-section';
 
 export default function DocumentSignPage() {
-	const offers = useSelector(selectCreditOffers);
-	const applicationId = offers[0].applicationId;
+	const applicationId = useSelector(selectApplicationId);
+
+	if (!applicationId) return;
 
 	return <DocumentSignSection applicationId={applicationId} />;
 }

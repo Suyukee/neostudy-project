@@ -11,5 +11,5 @@ export interface CardLoanOfferType {
 
 export interface InitialOffersState {
 	offers: CardLoanOfferType[];
-	chossedOfferId: number | null;
+	choosedOfferId: number | null;
 }
