@@ -6,6 +6,7 @@ import LoanPage from '@/pages/loan-page';
 import ApplicationIdLayout from '@/layouts/application-id-layout';
 import ApplicationIdPage from '@/pages/application-id-page';
 import DocumentPage from '@/pages/document-page';
+import DocumentSignPage from '@/pages/document-sign-page';
 import ErrorPage from '@/pages/error-page';
 
 export default function Router() {
@@ -17,7 +18,10 @@ export default function Router() {
 					<Route index element={<LoanPage />} />
 					<Route path=":applicationId" element={<ApplicationIdLayout />}>
 						<Route index element={<ApplicationIdPage />} />
-						<Route path="document" element={<DocumentPage />} />
+						<Route path="document">
+							<Route index element={<DocumentPage />} />
+							<Route path="sign" element={<DocumentSignPage />} />
+						</Route>
 					</Route>
 				</Route>
 				<Route path="*" element={<ErrorPage />} />

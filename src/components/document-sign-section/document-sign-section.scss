@@ -1,0 +1,75 @@
+@use '@/assets/variables.scss' as *;
+@use '@/assets/mixins.scss' as *;
+
+.document-sign-section {
+	margin-top: 80px;
+	display: flex;
+	flex-direction: column;
+}
+
+.document-sign-section__title {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.title__document-sign-text {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	h2 {
+		font-size: 30px;
+		font-weight: bold;
+		letter-spacing: 2%;
+	}
+
+	p {
+		font-weight: 500;
+		letter-spacing: 2%;
+	}
+
+	@include media('max', 'tablet') {
+		h2 {
+			font-size: 20px;
+		}
+	}
+}
+
+.document-sign-section__content {
+	margin-top: 32px;
+}
+
+.content__text {
+	color: $features-color;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 112%;
+}
+
+.content__file {
+	margin-top: 32px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.document-sign-section__control {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 40px;
+
+	.button-primary {
+		min-width: 160px;
+		height: 40px;
+		border-radius: 8px;
+	}
+}
+
+.control__checkbox {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}

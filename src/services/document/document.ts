@@ -12,7 +12,15 @@ export const documentApi = commonApi.injectEndpoints({
 			}),
 			invalidatesTags: [serviceTag],
 		}),
+
+		signDocument: builder.mutation<void, number>({
+			query: (id) => ({
+				method: 'POST',
+				url: `${BASEURL}/${id}/sign`,
+			}),
+			invalidatesTags: [serviceTag],
+		}),
 	}),
 });
 
-export const { useCreateDocumentMutation } = documentApi;
+export const { useCreateDocumentMutation, useSignDocumentMutation } = documentApi;

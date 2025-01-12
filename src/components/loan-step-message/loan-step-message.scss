@@ -17,6 +17,7 @@
 
 .loan-step-message__title {
 	color: $text-primary;
+	text-align: center;
 	font-size: 30px;
 	font-weight: bold;
 	letter-spacing: 2%;
@@ -24,6 +25,7 @@
 
 .loan-step-message__description {
 	color: $features-color;
+	text-align: center;
 	font-weight: 500;
 	letter-spacing: 2%;
 }
