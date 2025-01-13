@@ -11,8 +11,8 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import commonApi from '@/services';
-import offersSlice from '@/redux/offers';
-import applicationSlice from '@/redux/application';
+import offersSlice from '@/store/offers';
+import applicationSlice from '@/store/application';
 
 const rootReducer = combineReducers({
 	[commonApi.reducerPath]: commonApi.reducer,

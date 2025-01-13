@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router';
 import { useForm } from 'react-hook-form';
-import { useAppDispatch } from '@/redux/hooks';
-import { setApplicationStepAction } from '@/redux/application/application-actions';
+import { useAppDispatch } from '@/store/hooks';
+import { setApplicationStepAction } from '@/store/application/application-actions';
 import {
 	useGetApplicationByIdQuery,
 	usePutApplicationRegistrationMutation,
@@ -71,19 +71,20 @@ export default function ScoringSection({ applicationId }: ScoringFormProps) {
 
 	const [putApplicationRegistration, { isLoading, isSuccess }] =
 		usePutApplicationRegistrationMutation();
-	const { data: paymentData } = useGetApplicationByIdQuery(applicationId);
 
 	const handleSubmit = async (data: ScoringForm) => {
 		await putApplicationRegistration({ id: applicationId, body: data }).catch((error) =>
 			console.error(error),
 		);
-
-		if (paymentData?.status === 'CC_DENIED') {
-			setTimeout(() => navigate('/'), 10 * 1000);
-		} else {
-			dispatch(setApplicationStepAction(2));
-		}
 	};
+
+	const { data: paymentData } = useGetApplicationByIdQuery(applicationId);
+
+	if (paymentData?.status === 'CC_DENIED') {
+		setTimeout(() => navigate('/'), 10 * 1000);
+	} else {
+		dispatch(setApplicationStepAction(2));
+	}
 
 	if (isLoading) return <Loader />;
 

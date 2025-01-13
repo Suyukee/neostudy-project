@@ -1,4 +1,4 @@
-import store from '@/redux';
+import store from '@/store';
 import { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
 export type AppStore = typeof store;

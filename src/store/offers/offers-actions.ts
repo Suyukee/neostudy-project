@@ -1,5 +1,5 @@
-import offersSlice from '@/redux/offers';
-import { AppThunk } from '@/types/redux';
+import offersSlice from '@/store/offers';
+import { AppThunk } from '@/types/store';
 import { CardLoanOfferType } from '@/types/offers';
 
 const { setCreditOffers, setChoosedOfferId } = offersSlice.actions;

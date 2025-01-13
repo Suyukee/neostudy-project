@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
-import { useAppDispatch } from '@/redux/hooks';
-import { setApplicationStepAction } from '@/redux/application/application-actions';
+import { useAppDispatch } from '@/store/hooks';
+import { setApplicationStepAction } from '@/store/application/application-actions';
 import { useSignDocumentMutation } from '@/services/document/document';
 import {
 	DocumentData,

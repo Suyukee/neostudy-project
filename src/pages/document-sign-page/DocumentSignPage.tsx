@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import {
 	selectApplicationId,
 	selectApplicationStep,
-} from '@/redux/application/application-getters';
+} from '@/store/application/application-getters';
 import DocumentSignSection from '@/components/document-sign-section';
 import ErrorPage from '@/pages/error-page';
 

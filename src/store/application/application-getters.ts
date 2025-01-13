@@ -1,4 +1,4 @@
-import { RootState } from '@/types/redux';
+import { RootState } from '@/types/store';
 
 export const selectApplicationId = (state: RootState) => state.application.applicationId;
 

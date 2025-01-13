@@ -1,4 +1,4 @@
-import { RootState } from '@/types/redux';
+import { RootState } from '@/types/store';
 
 export const selectCreditOffers = (state: RootState) => state.offers.offers;
 

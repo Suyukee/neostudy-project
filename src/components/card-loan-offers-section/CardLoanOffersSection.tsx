@@ -1,6 +1,6 @@
-import { useAppDispatch } from '@/redux/hooks';
-import { setChoosedOfferIdAction } from '@/redux/offers/offers-actions';
-import { setApplicationIdAction } from '@/redux/application/application-actions';
+import { useAppDispatch } from '@/store/hooks';
+import { setChoosedOfferIdAction } from '@/store/offers/offers-actions';
+import { setApplicationIdAction } from '@/store/application/application-actions';
 import { usePostApplicationApplyMutation } from '@/services/application/application';
 import { CardLoanOfferProps } from '@/components/card-loan-offers-section/card-loan-offers-section-types';
 import CorrectlyIcon from '@/icons/CorrectlyIcon';

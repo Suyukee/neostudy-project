@@ -1,6 +1,6 @@
 import { Outlet, useMatch } from 'react-router';
 import { useSelector } from 'react-redux';
-import { selectApplicationId } from '@/redux/application/application-getters';
+import { selectApplicationId } from '@/store/application/application-getters';
 import ErrorPage from '@/pages/error-page';
 
 export default function ApplicationIdLayout() {

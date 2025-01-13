@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { selectApplicationId } from '@/redux/application/application-getters';
+import { selectApplicationId } from '@/store/application/application-getters';
 import ScoringSection from '@/components/scoring-section';
 
 export default function ApplicationIdPage() {

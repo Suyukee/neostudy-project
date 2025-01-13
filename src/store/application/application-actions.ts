@@ -1,5 +1,5 @@
-import applicationSlice from '@/redux/application';
-import { AppThunk } from '@/types/redux';
+import applicationSlice from '@/store/application';
+import { AppThunk } from '@/types/store';
 
 const { setApplicationId, setApplicationStep } = applicationSlice.actions;
 

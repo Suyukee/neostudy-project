@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
-import { useAppDispatch } from '@/redux/hooks';
-import { setCreditOffersAction } from '@/redux/offers/offers-actions';
+import { useAppDispatch } from '@/store/hooks';
+import { setCreditOffersAction } from '@/store/offers/offers-actions';
 import { usePostApplicationMutation } from '@/services/application/application';
 import { FormRuler } from '@/utils/FormRuler';
 import { PrescoringData } from '@/services/application/application-types';

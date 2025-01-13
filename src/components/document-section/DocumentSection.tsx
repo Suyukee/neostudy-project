@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useForm } from 'react-hook-form';
-import { useAppDispatch } from '@/redux/hooks';
-import { setApplicationStepAction } from '@/redux/application/application-actions';
+import { useAppDispatch } from '@/store/hooks';
+import { setApplicationStepAction } from '@/store/application/application-actions';
 import { useCreateDocumentMutation } from '@/services/document/document';
 import {
 	DocumentData,
