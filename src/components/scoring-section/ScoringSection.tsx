@@ -1,5 +1,9 @@
+import { useNavigate } from 'react-router';
 import { useForm } from 'react-hook-form';
-import { usePutApplicationRegistrationMutation } from '@/services/application/application';
+import {
+	useGetApplicationByIdQuery,
+	usePutApplicationRegistrationMutation,
+} from '@/services/application/application';
 import { ScoringForm } from '@/services/application/application-types';
 import { FormRuler } from '@/utils/FormRuler';
 import { ScoringFormProps } from '@/components/scoring-section/scoring-section-types';
@@ -12,6 +16,8 @@ import LoanStepMessage from '@/components/loan-step-message';
 import '@/components/scoring-section/scoring-section.scss';
 
 export default function ScoringSection({ applicationId }: ScoringFormProps) {
+	const navigate = useNavigate();
+
 	const methods = useForm<ScoringForm>({
 		mode: 'onBlur',
 		defaultValues: {
@@ -62,11 +68,16 @@ export default function ScoringSection({ applicationId }: ScoringFormProps) {
 
 	const [putApplicationRegistration, { isLoading, isSuccess }] =
 		usePutApplicationRegistrationMutation();
+	const { data: paymentData } = useGetApplicationByIdQuery(applicationId);
 
 	const handleSubmit = async (data: ScoringForm) => {
 		await putApplicationRegistration({ id: applicationId, body: data }).catch((error) =>
 			console.error(error),
 		);
+
+		if (paymentData?.status === 'CC_DENIED') {
+			setTimeout(() => navigate('/'), 10 * 1000);
+		}
 	};
 
 	if (isLoading) return <Loader />;
