@@ -3,7 +3,7 @@ import { InitialApplicationState } from '@/redux/application/application-types';
 
 const initialState: InitialApplicationState = {
 	applicationId: null,
-	applicationStep: null,
+	applicationStep: 0,
 };
 
 const applicationSlice = createSlice({

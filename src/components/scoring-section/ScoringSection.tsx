@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router';
 import { useForm } from 'react-hook-form';
+import { useAppDispatch } from '@/redux/hooks';
+import { setApplicationStepAction } from '@/redux/application/application-actions';
 import {
 	useGetApplicationByIdQuery,
 	usePutApplicationRegistrationMutation,
@@ -17,6 +19,7 @@ import '@/components/scoring-section/scoring-section.scss';
 
 export default function ScoringSection({ applicationId }: ScoringFormProps) {
 	const navigate = useNavigate();
+	const dispatch = useAppDispatch();
 
 	const methods = useForm<ScoringForm>({
 		mode: 'onBlur',
@@ -77,6 +80,8 @@ export default function ScoringSection({ applicationId }: ScoringFormProps) {
 
 		if (paymentData?.status === 'CC_DENIED') {
 			setTimeout(() => navigate('/'), 10 * 1000);
+		} else {
+			dispatch(setApplicationStepAction(2));
 		}
 	};
 

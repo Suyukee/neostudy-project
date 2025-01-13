@@ -1,4 +1,6 @@
 import { useForm } from 'react-hook-form';
+import { useAppDispatch } from '@/redux/hooks';
+import { setApplicationStepAction } from '@/redux/application/application-actions';
 import { useSignDocumentMutation } from '@/services/document/document';
 import {
 	DocumentData,
@@ -13,6 +15,8 @@ import LoanStepMessage from '../loan-step-message';
 import '@/components/document-sign-section/document-sign-section.scss';
 
 export default function DocumentSignSection({ applicationId }: DocumentSignSectionProps) {
+	const dispatch = useAppDispatch();
+
 	const methods = useForm<DocumentData>({
 		mode: 'onChange',
 		defaultValues: {
@@ -27,6 +31,8 @@ export default function DocumentSignSection({ applicationId }: DocumentSignSecti
 
 	const handleSubmit = async () => {
 		await signDocument(applicationId).catch((error) => console.error(error));
+
+		dispatch(setApplicationStepAction(4));
 	};
 
 	if (isLoading) return <Loader />;

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useForm } from 'react-hook-form';
+import { useAppDispatch } from '@/redux/hooks';
+import { setApplicationStepAction } from '@/redux/application/application-actions';
 import { useCreateDocumentMutation } from '@/services/document/document';
 import {
 	DocumentData,
@@ -20,6 +22,7 @@ export default function DocumentSection({ applicationId }: DocumentSectionProps)
 	const [goHomeModalIsOpen, setGoHomeModalIsOpen] = useState(false);
 
 	const navigate = useNavigate();
+	const dispatch = useAppDispatch();
 
 	const handleDenyModal = () => {
 		setDenyModalIsOpen(true);
@@ -53,6 +56,8 @@ export default function DocumentSection({ applicationId }: DocumentSectionProps)
 
 	const handleSubmit = async () => {
 		await createDocument(applicationId).catch((error) => console.error(error));
+
+		dispatch(setApplicationStepAction(3));
 	};
 
 	if (isLoading) return <Loader />;
