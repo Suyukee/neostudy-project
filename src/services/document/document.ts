@@ -26,6 +26,9 @@ export const documentApi = commonApi.injectEndpoints({
 			query: ({ id, code }) => ({
 				method: 'POST',
 				url: `${BASEURL}/${id}/sign/code`,
+				headers: {
+					'content-type': 'application/json',
+				},
 				body: code,
 			}),
 			invalidatesTags: [serviceTag],
