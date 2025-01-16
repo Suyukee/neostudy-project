@@ -25,7 +25,7 @@
 
 ## Примеры
 
-![изображение](https://github.com/user-attachments/assets/dd72ed04-fd59-4763-81a8-941390c1a351)
+![изображение](https://github.com/user-attachments/assets/8552c6cd-282c-4449-a5af-fd232cc52739)
 ![изображение](https://github.com/user-attachments/assets/85119de7-58a5-410a-a582-476eb77d8007)
 ![изображение](https://github.com/user-attachments/assets/427cd0f7-e803-471d-8736-3dfbaca9ff43)
 ![изображение](https://github.com/user-attachments/assets/d391ac6e-2f57-4ffb-80db-e1a91801eebf)
