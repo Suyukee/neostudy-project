@@ -9,6 +9,8 @@
 
 2. Для запуска проекта в режиме разработки используйте команду `pnpm dev`
 
+3. Для запуска docker-файла используйте команду `docker-compose up –-build`
+
 ## О приложении
 
 Веб-приложение эмитирует небольшой банковский сервис
@@ -23,6 +25,7 @@
 
 ## Примеры
 
-![изображение](https://github.com/user-attachments/assets/e4aa7077-dc33-40bd-a149-8a63f90bba59)
-![изображение](https://github.com/user-attachments/assets/d823b06f-14a4-414f-97a2-92de71a535e3)
-![изображение](https://github.com/user-attachments/assets/47707567-97af-4893-b2ae-7e005f0eedc3)
+![изображение](https://github.com/user-attachments/assets/dd72ed04-fd59-4763-81a8-941390c1a351)
+![изображение](https://github.com/user-attachments/assets/85119de7-58a5-410a-a582-476eb77d8007)
+![изображение](https://github.com/user-attachments/assets/427cd0f7-e803-471d-8736-3dfbaca9ff43)
+![изображение](https://github.com/user-attachments/assets/d391ac6e-2f57-4ffb-80db-e1a91801eebf)
